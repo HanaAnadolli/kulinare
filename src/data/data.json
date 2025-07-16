@@ -79,7 +79,7 @@
         "sq": "Enë porcelani"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/ene-porcelani.png"
+      "image": "kulinare_images/table-top/ene-porcelani.png"
     },
     {
       "id": 2,
@@ -88,7 +88,7 @@
         "sq": "Menu & tabela & shenja"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/menu-tabela-dhe-sheja.png"
+      "image": "kulinare_images/table-top/menu-tabela-dhe-sheja.png"
     },
     {
       "id": 4,
@@ -97,7 +97,7 @@
         "sq": "Melamine"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/melamine.jpg"
+      "image": "kulinare_images/table-top/melamine.jpg"
     },
     {
       "id": 5,
@@ -106,7 +106,7 @@
         "sq": "Kove shampanje & akulli"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/kova-shampanje.png"
+      "image": "kulinare_images/table-top/kova-shampanje.png"
     },
     {
       "id": 6,
@@ -115,7 +115,7 @@
         "sq": "Gota plastike"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/gota-plastike.png"
+      "image": "kulinare_images/table-top/gota-plastike.png"
     },
     {
       "id": 7,
@@ -124,7 +124,7 @@
         "sq": "Gota dhe ene qelqi"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/gota-dhe-ene-qelqi.png"
+      "image": "kulinare_images/table-top/gota-dhe-ene-qelqi.png"
     },
     {
       "id": 8,
@@ -133,7 +133,7 @@
         "sq": "Ene nga opal"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/ene-opali.png"
+      "image": "kulinare_images/table-top/ene-opali.png"
     },
     {
       "id": 9,
@@ -142,7 +142,7 @@
         "sq": "Artikuj tavoline"
       },
       "category_id": 1,
-      "image": "src/assets/kulinare_images/table-top/artikuj-tavoline.png"
+      "image": "kulinare_images/table-top/artikuj-tavoline.png"
     },
     {
       "id": 10,
@@ -151,7 +151,7 @@
         "sq": "Tavolina dhe lavaman inoksi"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/inox.jpg"
+      "image": "kulinare_images/pajisje_kuzhine/inox.jpg"
     },
     {
       "id": 11,
@@ -160,7 +160,7 @@
         "sq": "Skare, shporet dhe furra"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/skare.jpeg"
+      "image": "kulinare_images/pajisje_kuzhine/skare.jpeg"
     },
     {
       "id": 12,
@@ -169,7 +169,7 @@
         "sq": "Pajisje tjera kuzhine"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/pajisje-tjera-kuzhine.jpg"
+      "image": "kulinare_images/pajisje_kuzhine/pajisje-tjera-kuzhine.jpg"
     },
     {
       "id": 13,
@@ -178,7 +178,7 @@
         "sq": "Pajisje per perpunim te ushqimit"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/pajisje-per-perpunim-te-ushqimit.jpg"
+      "image": "kulinare_images/pajisje_kuzhine/pajisje-per-perpunim-te-ushqimit.jpg"
     },
     {
       "id": 14,
@@ -187,7 +187,7 @@
         "sq": "Pajisje per pergaditje te ushqimit"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/images.jpeg"
+      "image": "kulinare_images/pajisje_kuzhine/images.jpeg"
     },
     {
       "id": 15,
@@ -196,7 +196,7 @@
         "sq": "Makina akulli"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/makina_akulli.jpg"
+      "image": "kulinare_images/pajisje_kuzhine/makina_akulli.jpg"
     },
     {
       "id": 16,
@@ -205,7 +205,7 @@
         "sq": "Frigorifer dhe vitrina ekspozuese"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/frigo.jpg"
+      "image": "kulinare_images/pajisje_kuzhine/frigo.jpg"
     },
     {
       "id": 17,
@@ -214,7 +214,7 @@
         "sq": "Enelarese"
       },
       "category_id": 9,
-      "image": "src/assets/kulinare_images/pajisje_kuzhine/enelarese.jpeg"
+      "image": "kulinare_images/pajisje_kuzhine/enelarese.jpeg"
     },
     {
       "id": 18,
@@ -223,7 +223,7 @@
         "sq": "Pajisje per ngrohje ushqimi"
       },
       "category_id": 2,
-      "image": "src/assets/kulinare_images/buffet/ngorhje-ushqimi.jpg"
+      "image": "kulinare_images/buffet/ngorhje-ushqimi.jpg"
     },
     {
       "id": 19,
@@ -232,7 +232,7 @@
         "sq": "Ene per prezentim te ushqimit"
       },
       "category_id": 2,
-      "image": "src/assets/kulinare_images/buffet/ene-per-prezentim-te-ushqimit.jpg"
+      "image": "kulinare_images/buffet/ene-per-prezentim-te-ushqimit.jpg"
     },
     {
       "id": 20,
@@ -241,7 +241,7 @@
         "sq": "Bokall dhe termos sherbimi"
       },
       "category_id": 2,
-      "image": "src/assets/kulinare_images/buffet/bokall-dhe-termos.jpg"
+      "image": "kulinare_images/buffet/bokall-dhe-termos.jpg"
     },
     {
       "id": 21,
@@ -250,7 +250,7 @@
         "sq": "Artikuj per sherbim te ushqimit"
       },
       "category_id": 2,
-      "image": "src/assets/kulinare_images/buffet/Artikuj-per-sherbim-te-ushqimit.jpg"
+      "image": "kulinare_images/buffet/Artikuj-per-sherbim-te-ushqimit.jpg"
     },
     {
       "id": 22,
@@ -259,7 +259,7 @@
         "sq": "Tabake sherbimi"
       },
       "category_id": 3,
-      "image": "src/assets/kulinare_images/bari/tabak-sherbimi.jpg"
+      "image": "kulinare_images/bari/tabak-sherbimi.jpg"
     },
     {
       "id": 23,
@@ -268,7 +268,7 @@
         "sq": "Pipa"
       },
       "category_id": 3,
-      "image": "src/assets/kulinare_images/bari/pipa.jpg"
+      "image": "kulinare_images/bari/pipa.jpg"
     },
     {
       "id": 24,
@@ -277,7 +277,7 @@
         "sq": "Pajisje bari"
       },
       "category_id": 3,
-      "image": "src/assets/kulinare_images/bari/Pajisje_bari.jpeg"
+      "image": "kulinare_images/bari/Pajisje_bari.jpeg"
     },
     {
       "id": 25,
@@ -286,7 +286,7 @@
         "sq": "Artikuj bari"
       },
       "category_id": 3,
-      "image": "src/assets/kulinare_images/bari/artikuj_bari.jpg"
+      "image": "kulinare_images/bari/artikuj_bari.jpg"
     },
     {
       "id": 26,
@@ -295,7 +295,7 @@
         "sq": "Shporta mbeturinash, shpuzore & artikuj hoteli"
       },
       "category_id": 10,
-      "image": "src/assets/kulinare_images/artikuj_hoteli/shporta.jpg"
+      "image": "kulinare_images/artikuj_hoteli/shporta.jpg"
     },
     {
       "id": 27,
@@ -304,7 +304,7 @@
         "sq": "Karroca, rafte & artikuj hoteli"
       },
       "category_id": 10,
-      "image": "src/assets/kulinare_images/artikuj_hoteli/karroca.jpg"
+      "image": "kulinare_images/artikuj_hoteli/karroca.jpg"
     },
     {
       "id": 28,
@@ -313,7 +313,7 @@
         "sq": "Deterxhentet"
       },
       "category_id": 8,
-      "image": "src/assets/kulinare_images/deterxhentet/deterxhent.jpeg"
+      "image": "kulinare_images/deterxhentet/deterxhent.jpeg"
     }
   ],
   "products": [
@@ -324,7 +324,7 @@
         "sq": "Mbi tavoline"
       },
       "subcategory_id": 1,
-      "file": "src/assets/kulinare_pdf/1 On top.pdf"
+      "file": "kulinare_pdf/1 On top.pdf"
     },
     {
       "id": 2,
@@ -333,7 +333,7 @@
         "sq": "Menu & tabela & shenja"
       },
       "subcategory_id": 2,
-      "file": "src/assets/kulinare_pdf/Tabletop - Menu & tabela & shenja.pdf"
+      "file": "kulinare_pdf/Tabletop - Menu & tabela & shenja.pdf"
     },
     {
       "id": 3,
@@ -342,7 +342,7 @@
         "sq": "Melamine"
       },
       "subcategory_id": 4,
-      "file": "src/assets/kulinare_pdf/Tabletop - Melamine.pdf"
+      "file": "kulinare_pdf/Tabletop - Melamine.pdf"
     },
     {
       "id": 4,
@@ -351,7 +351,7 @@
         "sq": "Kove shampanje & akulli"
       },
       "subcategory_id": 5,
-      "file": "src/assets/kulinare_pdf/Tabletop - Kove shampanje & akulli.pdf"
+      "file": "kulinare_pdf/Tabletop - Kove shampanje & akulli.pdf"
     },
     {
       "id": 5,
@@ -360,7 +360,7 @@
         "sq": "Gota plastike"
       },
       "subcategory_id": 6,
-      "file": "src/assets/kulinare_pdf/Tabletop - Gota plastike.pdf"
+      "file": "kulinare_pdf/Tabletop - Gota plastike.pdf"
     },
     {
       "id": 6,
@@ -369,7 +369,7 @@
         "sq": "Gota dhe ene qelqi"
       },
       "subcategory_id": 7,
-      "file": "src/assets/kulinare_pdf/Tabletop - Gota dhe ene qelqi.pdf"
+      "file": "kulinare_pdf/Tabletop - Gota dhe ene qelqi.pdf"
     },
     {
       "id": 7,
@@ -378,7 +378,7 @@
         "sq": "Ene nga opal"
       },
       "subcategory_id": 8,
-      "file": "src/assets/kulinare_pdf/Tabletop - Ene nga opal.pdf"
+      "file": "kulinare_pdf/Tabletop - Ene nga opal.pdf"
     },
     {
       "id": 8,
@@ -387,7 +387,7 @@
         "sq": "Artikuj tavoline"
       },
       "subcategory_id": 9,
-      "file": "src/assets/kulinare_pdf/Tabletop - Artikuj tavoline.pdf"
+      "file": "kulinare_pdf/Tabletop - Artikuj tavoline.pdf"
     },
     {
       "id": 9,
@@ -396,7 +396,7 @@
         "sq": "Tavolina dhe lavaman inoksi"
       },
       "subcategory_id": 10,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Tavolina dhe lavaman inoksi.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Tavolina dhe lavaman inoksi.pdf"
     },
     {
       "id": 10,
@@ -405,7 +405,7 @@
         "sq": "Skare, shporet dhe furra"
       },
       "subcategory_id": 11,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Skare, shporet dhe furra.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Skare, shporet dhe furra.pdf"
     },
     {
       "id": 11,
@@ -414,7 +414,7 @@
         "sq": "Pajisje tjera kuzhine"
       },
       "subcategory_id": 12,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Pajisje tjera kuzhine.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Pajisje tjera kuzhine.pdf"
     },
     {
       "id": 12,
@@ -423,7 +423,7 @@
         "sq": "Pajisje per perpunim te ushqimit"
       },
       "subcategory_id": 13,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Pajisje per perpunim te ushqimit.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Pajisje per perpunim te ushqimit.pdf"
     },
     {
       "id": 13,
@@ -432,7 +432,7 @@
         "sq": "Pajisje per pergaditje te ushqimit"
       },
       "subcategory_id": 14,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Pajisje per pergaditje te ushqimit.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Pajisje per pergaditje te ushqimit.pdf"
     },
     {
       "id": 14,
@@ -441,7 +441,7 @@
         "sq": "Makina akulli"
       },
       "subcategory_id": 15,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Makina akulli.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Makina akulli.pdf"
     },
     {
       "id": 15,
@@ -450,7 +450,7 @@
         "sq": "Frigorifer dhe vitrina ekspozuese"
       },
       "subcategory_id": 16,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Frigorifer dhe vitrina ekspozuese.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Frigorifer dhe vitrina ekspozuese.pdf"
     },
     {
       "id": 16,
@@ -459,7 +459,7 @@
         "sq": "Enelarese"
       },
       "subcategory_id": 17,
-      "file": "src/assets/kulinare_pdf/Pajisje kuzhine - Enelarese.pdf"
+      "file": "kulinare_pdf/Pajisje kuzhine - Enelarese.pdf"
     },
     {
       "id": 17,
@@ -468,7 +468,7 @@
         "sq": "Pajisje per ngrohje ushqimi"
       },
       "subcategory_id": 18,
-      "file": "src/assets/kulinare_pdf/Bufet - Pajisje per ngrohje ushqimi.pdf"
+      "file": "kulinare_pdf/Bufet - Pajisje per ngrohje ushqimi.pdf"
     },
     {
       "id": 18,
@@ -477,7 +477,7 @@
         "sq": "Ene per prezentim te ushqimit"
       },
       "subcategory_id": 19,
-      "file": "src/assets/kulinare_pdf/Bufet - Ene per prezentim te ushqimit.pdf"
+      "file": "kulinare_pdf/Bufet - Ene per prezentim te ushqimit.pdf"
     },
     {
       "id": 19,
@@ -486,7 +486,7 @@
         "sq": "Bokall dhe termos sherbimi"
       },
       "subcategory_id": 20,
-      "file": "src/assets/kulinare_pdf/Bufet - Bokall dhe termos sherbimi.pdf"
+      "file": "kulinare_pdf/Bufet - Bokall dhe termos sherbimi.pdf"
     },
     {
       "id": 20,
@@ -495,7 +495,7 @@
         "sq": "Artikuj per sherbim te ushqimit"
       },
       "subcategory_id": 21,
-      "file": "src/assets/kulinare_pdf/Bufet - Artikuj per sherbim te ushqimit.pdf"
+      "file": "kulinare_pdf/Bufet - Artikuj per sherbim te ushqimit.pdf"
     },
     {
       "id": 21,
@@ -504,7 +504,7 @@
         "sq": "Tabake sherbimi"
       },
       "subcategory_id": 22,
-      "file": "src/assets/kulinare_pdf/Bari - Tabake sherbimi.pdf"
+      "file": "kulinare_pdf/Bari - Tabake sherbimi.pdf"
     },
     {
       "id": 22,
@@ -513,7 +513,7 @@
         "sq": "Pipa"
       },
       "subcategory_id": 23,
-      "file": "src/assets/kulinare_pdf/Bari - Pipa.pdf"
+      "file": "kulinare_pdf/Bari - Pipa.pdf"
     },
     {
       "id": 23,
@@ -522,7 +522,7 @@
         "sq": "Pajisje bari"
       },
       "subcategory_id": 24,
-      "file": "src/assets/kulinare_pdf/Bari - Pajisje bari.pdf"
+      "file": "kulinare_pdf/Bari - Pajisje bari.pdf"
     },
     {
       "id": 24,
@@ -531,7 +531,7 @@
         "sq": "Artikuj bari"
       },
       "subcategory_id": 25,
-      "file": "src/assets/kulinare_pdf/Bari - Artikuj bari.pdf"
+      "file": "kulinare_pdf/Bari - Artikuj bari.pdf"
     },
     {
       "id": 25,
@@ -540,7 +540,7 @@
         "sq": "Shporta mbeturinash, shpuzore & artikuj hoteli"
       },
       "subcategory_id": 26,
-      "file": "src/assets/kulinare_pdf/Artikuj hoteli - Shporta mbeturinash, shpuzore & artikuj hoteli.pdf"
+      "file": "kulinare_pdf/Artikuj hoteli - Shporta mbeturinash, shpuzore & artikuj hoteli.pdf"
     },
     {
       "id": 26,
@@ -549,7 +549,7 @@
         "sq": "Karroca, rafte & artikuj hoteli"
       },
       "subcategory_id": 27,
-      "file": "src/assets/kulinare_pdf/Artikuj hoteli - Karroca, rafte & artikuj hoteli.pdf"
+      "file": "kulinare_pdf/Artikuj hoteli - Karroca, rafte & artikuj hoteli.pdf"
     },
     {
       "id": 27,
@@ -558,7 +558,7 @@
         "sq": "Deterxhentet"
       },
       "subcategory_id": 28,
-      "file": "src/assets/kulinare_pdf/8 Deterxhentet.pdf"
+      "file": "kulinare_pdf/8 Deterxhentet.pdf"
     }
   ]
 }
