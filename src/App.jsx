@@ -12,12 +12,14 @@ import BlogDetail from "./pages/BlogDetail";
 import ContactUs from "./pages/ContactUs";
 import { ProductFilterProvider } from "./context/ProductFilterContext";
 import { LanguageProvider } from "./context/LanguageContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const { t } = useTranslation();
 
   return (
     <ProductFilterProvider>
+      <ScrollToTop />   
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
