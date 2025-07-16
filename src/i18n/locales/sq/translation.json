@@ -1,0 +1,227 @@
+{
+    "nav": {
+      "home": "Ballina",
+      "about": "Rreth Nesh",
+      "products": "Produktet",
+      "gallery": "Galeria",
+      "blog": "Blog",
+      "contact": "Na kontaktoni"
+    },
+    "lang": {
+      "english": "Anglisht",
+      "albanian": "Shqip"
+    },
+      "footer": {
+      "description": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren. Kur ke pajisjet e duhura, kuzhinieri ndihet më i sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit.",
+      "infoTitle": "Informacioni:",
+      "linksTitle": "Linqet:",
+      "securityTitle": "Siguria:",
+      "terms": "Termet dhe kushtet",
+      "privacy": "Politika e Privatësisë",
+      "faq": "FAQ",
+      "cookies": "Cookies",
+      "copyright": "Copyright © 2025 Kulinare. Të gjitha të drejtat e rezervuara."
+    },
+    "about": {
+    "title": "RRETH NESH",
+    "description1": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren.",
+    "description2": "Kur ke pajisjet e duhura, kuzhinieri ndihet më i sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit. Klienti ndërkaq do t’ju falënderojë për komforin, shijen unike dhe përjetimin e paharrueshëm.",
+    "note": "Keni hapur restorant dhe po kërkoni për ta pajisur? Jeni në vendin e duhur!",
+    "button": "Më shumë rreth nesh"
+  },
+  "aboutUs": {
+    "title": "RRETH NESH",
+    "heading": "Te Kulinare, besojmë se suksesi i një kuzhine nuk fillon vetëm me një recetë të mirë",
+    "p1": "Ai fillon me pajisjet e duhura, organizimin efikas dhe zgjidhjet profesionale që i japin jetë çdo ideje kulinare.",
+    "p2": "E themeluar në vitin 2006, Kulinare ka ndërtuar reputacionin e saj si një nga furnizuesit më të besueshëm në tregun kosovar për pajisje profesionale të kuzhinës, enë, aksesorë dhe zgjidhje të personalizuara për industrinë e hotelerisë dhe gastronomisë.",
+    "p3": "Me përvojë të gjatë në këtë sektor dhe me një ekip të përkushtuar profesionistësh, ne jemi gjithmonë pranë klientëve tanë – nga idea e parë deri te instalimi final i kuzhinës së tyre.",
+    "p4": "Kuzhinierët që punojnë me pajisje cilësore ndihen më të sigurt dhe më të qetë në punën e tyre, ndërsa klientët e tyre e vlerësojnë këtë përmes shijes, komoditetit dhe përvojës që iu ofrojnë.",
+    "p5": "Që nga viti 2006, ne kemi qenë zgjidhja e parë për shumë biznese që kërkojnë cilësi, profesionalizëm dhe partnerë të besueshëm. Nëse jeni në fillim të rrugëtimit tuaj ose kërkoni të rrisni performancën e biznesit tuaj, Kulinare është partneri juaj i duhur."
+  },
+  "blog": {
+    "title": "LAJMET TONA MË TË FUNDIT",
+    "readMore": "Lexo më shumë",
+    "posts": [
+    {
+      "title": "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine"
+    },
+    {
+      "title": "Nga tefet te djerrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës"
+    },
+    {
+      "title": "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie"
+    }
+    ]
+  },
+  "months": {
+    "march": "Mars"
+  },
+  "details": {
+    "overlayText": "Ku çdo detaj ka rëndësi në krijimin tonë.",
+    "heading": "Ekip profesional,\nExperiencë e dëshmuar\nme mundësi të pafundme",
+    "paragraph": "Punonjësit tanë, profesionistë të përkushtuar, ju udhëheqin nga këshilli deri te instalimi i kuzhinës suaj. Me vite përvoje të fituara në këtë industri, kemi ndërtuar themelat dhe sekretet e suksesit tonë."
+  },
+  "contact": {
+    "title": "Ne jemi këtu për ju!",
+    "intro1": "Keni pyetje, nevojë për këshilla apo dëshironi të bashkëpunoni me ne?",
+    "intro2": "Stafi i Kulinare është gjithmonë i gatshëm t’ju ndihmojë. Na kontaktoni për informacione rreth produkteve, shërbimeve, apo për të kërkuar një ofertë të personalizuar për biznesin tuaj.",
+    "addressLabel": "Adresa",
+    "addressText": "Magjistrala Prishtinë-Ferizaj, km i 10-të, Prishtina",
+    "phoneLabel": "Numri i telefonit",
+    "emailLabel": "Email Adresa",
+    "firstName": "EMRI",
+    "lastName": "MBIEMRI",
+    "email": "EMAIL-I",
+    "phone": "NUMRI I TELEFONIT",
+    "message": "MESAZHI",
+    "submit": "Dërgo mesazhin",
+    "success": "Mesazhi u dërgua me sukses!",
+    "error": "Diçka shkoi keq. Ju lutem provoni përsëri."
+  },
+  "gallery": {
+    "title": "GALERIA JONË",
+    "subtitle": "Në Kulinare ne krenoheni me faktin se jemi specialistë në këtë industri.",
+    "closeAria": "Mbyll",
+    "prevAria": "Paraprak",
+    "nextAria": "Tjetër",
+    "dynamicTitle": "GALERIA",
+    "noImages": "Nuk ka imazhe për të shfaqur."
+  },
+  "hero": {
+    "heading": "Gjithçka që i duhet kuzhinës suaj – nga A në ZH.",
+    "subtext": "Pajisje të specializuara për gastronomi dhe hoteleri – nga markat më të njohura botërore, me shërbim të personalizuar dhe profesional.",
+    "button": "Shiko galerinë tonë"
+  },
+  "location": {
+    "title": "Na gjeni këtu"
+  },
+  "mission": {
+    "title": "Misioni Jonë",
+    "description": "Të ofrojmë zgjidhje të avancuara dhe profesionale për industrinë e gastronomisë në Kosovë, duke u përkushtuar ndaj cilësisë së produkteve, shërbimit ndaj klientit dhe ndihmës në ndërtimin e kuzhinave funksionale, efikase dhe të qëndrueshme për çdo klient."
+  },
+  "vision": {
+    "title": "Vizoni Jonë",
+    "description": "Të jemi zgjedhja e parë në treg për çdo profesionist të gastronomisë që kërkon cilësi, ekspertizë dhe partneritet afatgjatë – duke ndikuar pozitivisht në zhvillimin dhe modernizimin e industrisë së hotelerisë dhe ushqimit në Kosovë."
+  },
+  "services": {
+    "title": "SHËRBIMET TONA",
+    "card1": {
+      "title": "Cilësi e Përsosur",
+      "description": "Ekipi ynë i ekspertëve ju ndihmon të planifikoni, dizajnoni dhe instaloni kuzhinën tuaj ideale."
+    },
+    "card2": {
+      "title": "Dizajne Unike",
+      "description": "Përjetoni ndryshimin me shërbimet tona të planifikimit, dizajnimit dhe instalimit të kuzhinave profesionale."
+    },
+    "card3": {
+      "title": "Instalime Precize",
+      "description": "Instalime të përsosura dhe përfundime perfekte nga ekipi ynë i specializuar."
+    },
+    "card4": {
+      "title": "Gama e Gjerë e Materialeve",
+      "description": "Kurseni kohë dhe mund me zgjedhjet tona të pajisjeve dhe aksesorëve për kuzhinën tuaj profesionale."
+    }
+  },
+  "team": {
+    "title": "EKIPA JONË",
+    "roles": {
+      "ceo": "CEO",
+      "manager": "Menaxher",
+      "senior_director": "Drejtor i Lartë"
+    }
+  },
+  "product": {
+    "loading": "Duke u ngarkuar produktet...",
+    "no_results": "Asnjë produkt i gjetur për këtë filtër.",
+    "download_pdf": "Shkarko PDF"
+  },
+  "products": {
+    "title": "PRODUKTET TONA",
+    "view_more": "Shikoni më shumë",
+    "description": {
+      "part1": "Produktet tona përfshijnë pajisje profesionale, enë cilësore dhe aksesorë inovativë për kuzhina,",
+      "highlight": "bare dhe restorante",
+      "part2": ", duke garantuar funksionalitet, stil dhe qëndrueshmëri."
+    },
+    "items": {
+      "kitchen_equipment": {
+        "title": "Pajisje Kuzhine",
+        "desc": "Teknologji moderne për një kuzhinë funksionale dhe efikase."
+      },
+      "kitchen_tools": {
+        "title": "Vegla Kuzhine",
+        "desc": "Cilësi dhe precizitet për çdo përgatitje kulinare."
+      },
+      "bars_buffets": {
+        "title": "Baret dhe Buffet",
+        "desc": "Zgjidhje moderne dhe funksionale për baret dhe buffet-et tuaja."
+      },
+      "staff_clothing": {
+        "title": "Veshje Personeli",
+        "desc": "Komfor dhe profesionalizëm për stafin tuaj."
+      },
+      "detergents": {
+        "title": "Deterxhentet",
+        "desc": "Deterxhentë tanë profesionalë ofrojnë pastërti të shkëlqyer dhe higjienë maksimale."
+      }
+    }
+  },
+  "stats": {
+    "headline": "Besuar nga më shumë se 200+ klientë.",
+    "items": {
+      "products": "Produkte",
+      "projects": "Projekte",
+      "happy_clients": "Klientë të lumtur"
+    }
+  },
+  "subscription": {
+    "title": "Regjistrohu për ofertat, idetë dhe sugjerimet tona speciale",
+    "placeholder": "Shkruani emailin tuaj",
+    "submit": "Dërgo"
+  },
+  "testimonials": {
+    "title": "DËSHMITË TONA",
+    "subtitle": "Çfarë thonë njerëzit për ne"
+  },
+  "values": {
+    "title": "Vlerat Tona",
+    "list": [
+      {
+        "title": "Përkushtim ndaj Klientit",
+        "description": "Ne e vendosim klientin në qendër të çdo veprimi dhe vendimi që marrim."
+      },
+      {
+        "title": "Cilësi",
+        "description": "Ofrimi i produkteve dhe shërbimeve që plotësojnë standardet më të larta ndërkombëtare."
+      },
+      {
+        "title": "Profesionalizëm",
+        "description": "Me përvojë që nga viti 2006, ofrojmë zgjidhje të besueshme me staf të trajnuar dhe të përkushtuar."
+      },
+      {
+        "title": "Besueshmëri",
+        "description": "Krijojmë marrëdhënie afatgjata me klientët tanë duke qëndruar të sinqertë, korrektë dhe të përgjegjshëm."
+      },
+      {
+        "title": "Inovacion",
+        "description": "Ndjekim zhvillimet më të fundit të teknologjisë për t'iu sjellë produkte dhe zgjidhje që rrisin efikasitetin dhe përmirësojnë përvojën e punës në kuzhinë."
+      }
+    ]
+  },
+  "video": {
+    "title": "ENË PËR ZIERJE DHE FËRGIM",
+    "description": "Enë të qëndrueshme dhe funksionale për zierje dhe fërgim, ideale për përdorim profesional në çdo kuzhinë, duke siguruar gatim efikas dhe rezultate të shijshme çdo herë.",
+    "button": "Shiko katalogun tonë"
+  },
+  "notFound": "404 – Faqja nuk u gjet",
+  "blogTitle": "BLOG",
+  "noBlogs": "Nuk ka blogje për të shfaqur.",
+  "blog.author": "Autori",
+  "blog.published": "Publikuar",
+  "loading": "Duke u ngarkuar...",
+  "contact.title": "NA KONTAKTONI",
+  "products.title": "PRODUKTET TONA",
+  "products.filter": "Filtro kategoritë",
+  "search_placeholder": "Kërko produktin..."
+}
+  

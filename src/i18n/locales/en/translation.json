@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "contact": "Contact Us"
+  },
+  "lang": {
+    "english": "English",
+    "albanian": "Albanian"
+  },
+  "footer": {
+    "description": "The success of a functional kitchen depends on the equipment used. When you have the right tools, the chef feels more confident and relaxed while preparing food.",
+    "infoTitle": "Information:",
+    "linksTitle": "Links:",
+    "securityTitle": "Security:",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy Policy",
+    "faq": "FAQ",
+    "cookies": "Cookies",
+    "copyright": "Copyright © 2025 Kulinare. All Rights Reserved"
+  },
+  "about": {
+    "title": "ABOUT US",
+    "description1": "The success of a functional kitchen depends on the equipment used.",
+    "description2": "When you have the right tools, the chef feels more confident and relaxed during food preparation. The customer, meanwhile, will thank you for the comfort, unique taste, and unforgettable experience.",
+    "note": "Opened a restaurant and need to equip it? You're in the right place!",
+    "button": "More about us"
+  },
+  "aboutUs": {
+    "title": "ABOUT US",
+    "heading": "At Kulinare, we believe that the success of a kitchen doesn't start just with a good recipe",
+    "p1": "It starts with the right equipment, efficient organization, and professional solutions that bring every culinary idea to life.",
+    "p2": "Founded in 2006, Kulinare has built its reputation as one of the most trusted suppliers in the Kosovar market for professional kitchen equipment, utensils, accessories, and customized solutions for the hospitality and gastronomy industry.",
+    "p3": "With extensive experience in the sector and a dedicated team of professionals, we are always close to our clients – from the first idea to the final installation of their kitchen.",
+    "p4": "Chefs working with quality equipment feel more confident and relaxed in their work, while their customers appreciate this through the taste, comfort, and experience they provide.",
+    "p5": "Since 2006, we have been the first choice for many businesses seeking quality, professionalism, and reliable partners. Whether you're starting your journey or looking to boost your business performance, Kulinare is your right partner."
+  },
+  "blog": {
+    "title": "OUR LATEST NEWS",
+    "readMore": "Read more",
+    "posts": [
+      {
+        "title": "Precision and Performance: Essential tools every chef needs"
+      },
+      {
+        "title": "From ladles to skillets: Your guide to pro chef equipment"
+      },
+      {
+        "title": "Master’s Gear: Must-have tools for culinary excellence"
+      }
+    ]
+  },
+  "months": {
+    "march": "March"
+  },
+  "contact": {
+    "title": "We're here for you!",
+    "intro1": "Got questions, need advice, or want to collaborate with us?",
+    "intro2": "The Kulinare staff is always ready to help you. Contact us for product info, services, or to request a personalized offer.",
+    "addressLabel": "Address",
+    "addressText": "Main road Prishtinë-Ferizaj, km 10, Prishtina",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email Address",
+    "firstName": "FIRST NAME",
+    "lastName": "LAST NAME",
+    "email": "EMAIL",
+    "phone": "PHONE NUMBER",
+    "message": "MESSAGE",
+    "submit": "Send message",
+    "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again."
+  },
+  "details": {
+    "overlayText": "Where every detail matters in our creation.",
+    "heading": "Professional team,\nProven experience,\nEndless possibilities",
+    "paragraph": "Our committed professionals guide you from consultation to final kitchen installation. With years of industry experience, we’ve built the foundations and secrets of our success."
+  },
+  "gallery": {
+    "title": "OUR GALLERY",
+    "subtitle": "At Kulinare, we take pride in being specialists in this industry.",
+    "closeAria": "Close",
+    "prevAria": "Previous",
+    "nextAria": "Next",
+    "dynamicTitle": "GALLERY",
+    "noImages": "No images available to display."
+  },
+  "hero": {
+    "heading": "Everything your kitchen needs – from A to Z.",
+    "subtext": "Specialized equipment for gastronomy and hospitality – from world-renowned brands with personalized, professional service.",
+    "button": "View our gallery"
+  },
+  "location": {
+    "title": "Find us here"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "To provide advanced and professional solutions for the gastronomy industry in Kosovo, committed to product quality, customer service, and helping build functional, efficient, and sustainable kitchens for every client."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "description": "To be the first choice in the market for every gastronomy professional seeking quality, expertise, and long-term partnership – positively impacting the development and modernization of the hospitality and food industry in Kosovo."
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "card1": {
+      "title": "Perfect Quality",
+      "description": "Our team of experts helps you plan, design, and install your ideal kitchen."
+    },
+    "card2": {
+      "title": "Unique Designs",
+      "description": "Experience the difference with our professional kitchen planning, design, and installation services."
+    },
+    "card3": {
+      "title": "Precise Installations",
+      "description": "Perfect installations and flawless finishes by our specialized team."
+    },
+    "card4": {
+      "title": "Wide Range of Materials",
+      "description": "Save time and effort with our selection of equipment and accessories for your professional kitchen."
+    }
+  },
+  "team": {
+    "title": "OUR TEAM",
+    "roles": {
+      "ceo": "CEO",
+      "manager": "Manager",
+      "senior_director": "Senior Director"
+    }
+  },
+  "product": {
+    "loading": "Loading products...",
+    "no_results": "No products found for this filter.",
+    "download_pdf": "Download PDF"
+  },
+  "products": {
+    "title": "OUR PRODUCTS",
+    "view_more": "View More",
+    "description": {
+      "part1": "Our products include professional equipment, high-quality utensils and innovative accessories for kitchens,",
+      "highlight": "bars and restaurants",
+      "part2": ", ensuring functionality, style, and durability."
+    },
+    "items": {
+      "kitchen_equipment": {
+        "title": "Kitchen Equipment",
+        "desc": "Modern technology for a functional and efficient kitchen."
+      },
+      "kitchen_tools": {
+        "title": "Kitchen Tools",
+        "desc": "Quality and precision for every culinary preparation."
+      },
+      "bars_buffets": {
+        "title": "Bars and Buffets",
+        "desc": "Modern and functional solutions for your bars and buffets."
+      },
+      "staff_clothing": {
+        "title": "Staff Uniforms",
+        "desc": "Comfort and professionalism for your team."
+      },
+      "detergents": {
+        "title": "Detergents",
+        "desc": "Our professional detergents offer outstanding cleanliness and maximum hygiene."
+      }
+    }
+  },
+  "stats": {
+    "headline": "Trusted by over 200+ clients.",
+    "items": {
+      "products": "Products",
+      "projects": "Projects",
+      "happy_clients": "Happy Clients"
+    }
+  },
+  "subscription": {
+    "title": "Subscribe for our latest offers, ideas, and special tips",
+    "placeholder": "Enter your email address",
+    "submit": "Submit"
+  },
+  "testimonials": {
+    "title": "OUR TESTIMONIALS",
+    "subtitle": "What people say about us"
+  },
+  "values": {
+    "title": "Our Values",
+    "list": [
+      {
+        "title": "Customer Commitment",
+        "description": "We place the customer at the center of every action and decision we take."
+      },
+      {
+        "title": "Quality",
+        "description": "Delivering products and services that meet the highest international standards."
+      },
+      {
+        "title": "Professionalism",
+        "description": "With experience since 2006, we offer reliable solutions with trained and dedicated staff."
+      },
+      {
+        "title": "Trustworthiness",
+        "description": "We build long-term relationships with our clients by being honest, fair, and responsible."
+      },
+      {
+        "title": "Innovation",
+        "description": "We follow the latest technological developments to deliver products and solutions that enhance efficiency and improve the kitchen work experience."
+      }
+    ]
+  },
+  "video": {
+    "title": "POTS FOR BOILING AND FRYING",
+    "description": "Durable and functional pots for boiling and frying, ideal for professional use in any kitchen, ensuring efficient cooking and delicious results every time.",
+    "button": "View our catalog"
+  },
+  "notFound": "404 – Page not found",
+  "blogTitle": "BLOG",
+  "noBlogs": "No blog posts to display.",
+  "blog.author": "Author",
+  "blog.published": "Published",
+  "loading": "Loading...",
+  "contact.title": "CONTACT US",
+  "products.title": "OUR PRODUCTS",
+  "products.filter": "Filter categories",
+  "search_placeholder": "Search product..."
+}
+  
