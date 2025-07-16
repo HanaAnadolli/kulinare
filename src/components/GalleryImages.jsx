@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // Utility: chunk array into rows of 4
@@ -13,7 +13,10 @@ function chunkArray(array, size) {
 export default function GalleryImages() {
   const { t } = useTranslation();
 
-  // Local image filenames
+  // Import all images from the folder using Vite
+  const imageImports = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg}', { eager: true });
+  
+  // List of filenames to display
   const imageFilenames = [
     "gallery1.png",
     "gallery2.png",
@@ -25,11 +28,14 @@ export default function GalleryImages() {
     "gallery8.png"
   ];
 
-  // Convert to objects for consistency
-  const images = imageFilenames.map((name, idx) => ({
-    id: idx + 1,
-    image_url: `/src/assets/images/${name}`
-  }));
+  // Map filenames to the imported URLs
+  const images = imageFilenames.map((name, idx) => {
+    const fullPath = `/src/assets/images/${name}`;
+    return {
+      id: idx + 1,
+      image_url: imageImports[fullPath]?.default || ""
+    };
+  });
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,7 +61,6 @@ export default function GalleryImages() {
         </h2>
         <div className="border-b border-gray-400 mb-8"></div>
 
-        {/* Image Rows */}
         <div className="space-y-6">
           {imageChunks.map((row, rowIndex) => (
             <div
