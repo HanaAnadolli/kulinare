@@ -3,7 +3,7 @@ import { useProductFilter } from "../context/ProductFilterContext";
 import { useTranslation } from "react-i18next";
 import data from "../data/data.json"; // ⬅ local JSON import
 
-export default function ProductGrid() {
+export default function ProductGrid({ filters, searchTerm = "" }) {
   const { t, i18n } = useTranslation();
   const { selectedCategory, selectedSubcategories } = useProductFilter();
   const [subcategories, setSubcategories] = useState([]);
@@ -16,13 +16,36 @@ export default function ProductGrid() {
     setLoading(false);
   }, []);
 
+  const normalize = (str) => str?.toLowerCase().trim();
+
+  const getDisplayName = (name) =>
+    typeof name === "object" ? name[i18n.language] ?? name.en : name;
+
   const filteredProducts = products.filter((product) => {
     const sub = subcategories.find((s) => s.id === product.subcategory_id);
-    const categoryMatch = selectedCategory && sub?.category_id === selectedCategory;
+    if (!sub) return false;
+
+    const prodName = normalize(getDisplayName(product.name));
+    const subName = normalize(getDisplayName(sub.name));
+    const cat = data.categories.find((c) => c.id === sub.category_id);
+    const catName = normalize(getDisplayName(cat?.name));
+
+    if (searchTerm) {
+      return (
+        prodName.includes(searchTerm) ||
+        subName.includes(searchTerm) ||
+        catName.includes(searchTerm)
+      );
+    }
+
+    const categoryMatch =
+      selectedCategory && sub?.category_id === selectedCategory;
+
     const subMatch =
       selectedSubcategories.length > 0
         ? selectedSubcategories.includes(sub?.id)
         : true;
+
     return categoryMatch && subMatch;
   });
 
@@ -38,9 +61,6 @@ export default function ProductGrid() {
   }, {});
 
   const subIdsToShow = Object.keys(groupedBySub);
-
-  const getDisplayName = (name) =>
-    typeof name === "object" ? name[i18n.language] ?? name.en : name;
 
   return (
     <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 justify-items-center">
@@ -64,7 +84,7 @@ export default function ProductGrid() {
               className="relative group shadow bg-white overflow-hidden h-[350px] w-[90%] sm:w-[295px]"
             >
               <img
-                src={sub?.image || "/images/default.jpg"} // local image path
+                src={sub?.image || "/images/default.jpg"}
                 alt={subName}
                 className="w-full h-full object-cover transform transition-transform duration-800 group-hover:scale-105"
               />

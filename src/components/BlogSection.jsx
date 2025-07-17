@@ -12,19 +12,19 @@ export default function BlogSection() {
       date: { month: t("months.march"), day: "12" },
       img: blog1,
       title: t("blog.posts.0.title"),
-      link: "#",
+      link: "/blog/1",
     },
     {
       date: { month: t("months.march"), day: "11" },
       img: blog2,
       title: t("blog.posts.1.title"),
-      link: "#",
+      link: "/blog/2",
     },
     {
       date: { month: t("months.march"), day: "10" },
       img: blog3,
       title: t("blog.posts.2.title"),
-      link: "#",
+      link: "/blog/3",
     },
   ];
 

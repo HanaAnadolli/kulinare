@@ -7,52 +7,144 @@ import data from "../data/data.json";
 
 export default function ProductModal({ onClose }) {
   const navigate = useNavigate();
-  const { setSelectedCategory, clearFilters } = useProductFilter();
+  const { clearFilters } = useProductFilter();
   const { i18n } = useTranslation();
-  const [categories, setCategories] = useState([]);
 
-  // Load categories once from local JSON
+  const [categories, setCategories] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   useEffect(() => {
-    // the JSON structure we generated has { categories: [...] }
     setCategories(data.categories || []);
   }, []);
-
-  const handleClick = (cat) => {
-    clearFilters();
-    setSelectedCategory(cat.id);      // store the numeric ID
-    onClose();
-    navigate("/products");
-  };
-
-  // Split list into two roughly even columns
-  const middleIndex = Math.ceil(categories.length / 2);
-  const column1 = categories.slice(0, middleIndex);
-  const column2 = categories.slice(middleIndex);
 
   const getDisplayName = (name) =>
     typeof name === "object" ? name[i18n.language] ?? name.en : name;
 
+  const normalize = (str) => str?.toLowerCase().trim();
+
+  const handleSearch = (term) => {
+    const query = normalize(term);
+    if (!query) {
+      setSearchResults([]);
+      return;
+    }
+
+    const results = [];
+
+    // 1. Match Categories
+    data.categories.forEach((cat) => {
+      const catName = normalize(getDisplayName(cat.name));
+      if (catName.includes(query)) {
+        results.push({
+          type: "category",
+          name: getDisplayName(cat.name),
+          id: cat.id,
+        });
+      }
+    });
+
+    // 2. Match Subcategories
+    data.subcategories.forEach((sub) => {
+      const subName = normalize(getDisplayName(sub.name));
+      if (subName.includes(query)) {
+        results.push({
+          type: "subcategory",
+          name: getDisplayName(sub.name),
+          id: sub.id,
+          categoryId: sub.category_id,
+        });
+      }
+    });
+
+    // 3. Match Products
+    data.products.forEach((prod) => {
+      const prodName = normalize(getDisplayName(prod.name));
+      if (prodName.includes(query)) {
+        results.push({
+          type: "product",
+          name: getDisplayName(prod.name),
+          id: prod.id,
+          subcategoryId: prod.subcategory_id,
+        });
+      }
+    });
+
+    setSearchResults(results.slice(0, 10)); // Show top 10 matches
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      goToSearchPage();
+    }
+  };
+
+  const goToSearchPage = () => {
+    onClose();
+    clearFilters();
+    navigate(`/products?search=${encodeURIComponent(searchTerm.trim())}`);
+  };
+
+  const handleResultClick = (name) => {
+    setSearchTerm(name);
+    goToSearchPage();
+  };
+
+  // unchanged categories split
+  const middleIndex = Math.ceil(categories.length / 2);
+  const column1 = categories.slice(0, middleIndex);
+  const column2 = categories.slice(middleIndex);
+
   return (
     <div className="absolute left-0 w-full bg-white shadow-md z-30 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto p-8 flex flex-col md:flex-row gap-20 items-start">
-        {/* Search bar UI (not wired up yet) */}
+      <div className="max-w-7xl mx-auto p-8 flex flex-col md:flex-row gap-20 items-start relative">
+        {/* Search bar */}
         <div className="flex-1 relative">
-          <FiSearch className="absolute top-1/2 left-2 -translate-y-1/2 text-[#55384C]" />
+          <FiSearch
+            onClick={goToSearchPage}
+            className="absolute top-1/2 left-2 -translate-y-1/2 text-[#55384C] cursor-pointer"
+          />
           <input
             type="text"
             placeholder="Kërko produktin"
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              handleSearch(e.target.value);
+            }}
+            onKeyDown={handleKeyDown}
             className="border-b border-gray-400 focus:outline-none focus:border-[#55384C] pl-6 py-2 w-full placeholder-gray-400 text-gray-700"
           />
+
+          {/* Search results */}
+          {searchResults.length > 0 && (
+            <div className="absolute top-full left-0 mt-2 bg-white shadow-md border border-gray-200 z-50 w-full max-h-64 overflow-y-auto">
+              {searchResults.map((result, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => handleResultClick(result.name)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-[#55384C]"
+                >
+                  {result.name}{" "}
+                  <span className="text-xs text-gray-400">({result.type})</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Category links, two columns */}
+        {/* Category columns (unchanged) */}
         <div className="flex flex-col md:flex-row gap-24 flex-1 text-[#55384C]">
           {[column1, column2].map((column, idx) => (
             <div className="flex flex-col gap-6" key={idx}>
               {column.map((cat) => (
                 <span
                   key={cat.id}
-                  onClick={() => handleClick(cat)}
+                  onClick={() => {
+                    clearFilters();
+                    onClose();
+                    navigate("/products");
+                  }}
                   className="cursor-pointer hover:underline hover:text-[#D2AF6E]"
                 >
                   {getDisplayName(cat.name)}

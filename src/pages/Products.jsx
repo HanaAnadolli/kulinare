@@ -1,14 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
+
 import FilterSidebar from "../components/FilterSidebar";
 import ProductGrid from "../components/ProductGrid";
 import Header from "../components/Header";
 import SubscriptionSection from "../components/SubscriptionSection";
 import Footer from "../components/Footer";
 
+import data from "../data/data.json";
+import { useProductFilter } from "../context/ProductFilterContext";
+
 export default function Products() {
   const [activeFilters, setActiveFilters] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const { t } = useTranslation();
+  const location = useLocation();
+
+  const {
+    setSelectedCategory,
+    setSelectedSubcategories,
+  } = useProductFilter();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const query = params.get("search")?.toLowerCase().trim();
+    if (!query) return;
+
+    setSearchTerm(query);
+
+    // Clear manual filters when searching
+    setSelectedCategory(null);
+    setSelectedSubcategories([]);
+  }, [location.search]);
 
   return (
     <>
@@ -37,7 +61,7 @@ export default function Products() {
           {/* Sidebar + Grid */}
           <div className="flex flex-col md:flex-row gap-8">
             <FilterSidebar onFilterChange={setActiveFilters} />
-            <ProductGrid filters={activeFilters} />
+            <ProductGrid filters={activeFilters} searchTerm={searchTerm} />
           </div>
         </div>
       </main>

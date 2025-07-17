@@ -25,9 +25,12 @@ export default function AboutSection() {
           </p>
 
           <div className="mt-6 flex justify-center md:justify-start">
-            <button className="px-5 py-2 border border-[#55384C] text-[#55384C] rounded hover:bg-[#55384C] hover:text-white transition-colors duration-200">
+            <a href="/about">
+              <button className="px-5 py-2 border border-[#55384C] text-[#55384C] rounded hover:bg-[#55384C] hover:text-white transition-colors duration-200">
               {t("about.button")}
             </button>
+            </a>
+            
           </div>
         </div>
 
