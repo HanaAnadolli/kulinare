@@ -13,7 +13,7 @@ export default function Header() {
   const handleLanguageChange = (e) => {
     const lang = e.target.value;
     i18n.changeLanguage(lang);
-    localStorage.setItem("lang", lang); // optional: persist language
+    localStorage.setItem("lang", lang);
   };
 
   const handleCloseMobile = () => setIsMobileMenuOpen(false);
@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden sm:flex space-x-8 items-center">
+        <nav className="hidden lg:flex space-x-8 items-center">
           <Link to="/" className="text-white p-2 px-4 group text-lg">
             {t("nav.home")}
             <div className="bg-[#D2AF6E] h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
@@ -54,7 +54,7 @@ export default function Header() {
         </nav>
 
         {/* Language + Contact */}
-        <div className="hidden sm:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <select
             value={i18n.language}
             onChange={handleLanguageChange}
@@ -73,7 +73,7 @@ export default function Header() {
         </div>
 
         {/* Hamburger */}
-        <div className="sm:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white text-2xl"
@@ -90,10 +90,10 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="sm:hidden fixed top-0 right-0 w-2/3 h-full bg-white z-50 shadow-lg transition duration-300">
+        <div className="lg:hidden fixed top-0 right-0 w-2/3 h-full bg-white z-50 shadow-lg transition duration-300">
           <div className="flex justify-end p-4">
             <button
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={handleCloseMobile}
               className="text-2xl text-[#55384C]"
               aria-label="Close Menu"
             >
