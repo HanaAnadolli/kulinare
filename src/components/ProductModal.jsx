@@ -32,7 +32,6 @@ export default function ProductModal({ onClose }) {
 
     const results = [];
 
-    // 1. Match Categories
     data.categories.forEach((cat) => {
       const catName = normalize(getDisplayName(cat.name));
       if (catName.includes(query)) {
@@ -44,7 +43,6 @@ export default function ProductModal({ onClose }) {
       }
     });
 
-    // 2. Match Subcategories
     data.subcategories.forEach((sub) => {
       const subName = normalize(getDisplayName(sub.name));
       if (subName.includes(query)) {
@@ -57,7 +55,6 @@ export default function ProductModal({ onClose }) {
       }
     });
 
-    // 3. Match Products
     data.products.forEach((prod) => {
       const prodName = normalize(getDisplayName(prod.name));
       if (prodName.includes(query)) {
@@ -70,7 +67,7 @@ export default function ProductModal({ onClose }) {
       }
     });
 
-    setSearchResults(results.slice(0, 10)); // Show top 10 matches
+    setSearchResults(results.slice(0, 10));
   };
 
   const handleKeyDown = (e) => {
@@ -90,7 +87,11 @@ export default function ProductModal({ onClose }) {
     goToSearchPage();
   };
 
-  // unchanged categories split
+  const handleCategoryClick = (cat) => {
+    onClose();
+    navigate(`/products?category=${cat.id}`);
+  };
+
   const middleIndex = Math.ceil(categories.length / 2);
   const column1 = categories.slice(0, middleIndex);
   const column2 = categories.slice(middleIndex);
@@ -98,7 +99,6 @@ export default function ProductModal({ onClose }) {
   return (
     <div className="absolute left-0 w-full bg-white shadow-md z-30 border-t border-gray-200">
       <div className="max-w-7xl mx-auto p-8 flex flex-col md:flex-row gap-20 items-start relative">
-        {/* Search bar */}
         <div className="flex-1 relative">
           <FiSearch
             onClick={goToSearchPage}
@@ -116,7 +116,6 @@ export default function ProductModal({ onClose }) {
             className="border-b border-gray-400 focus:outline-none focus:border-[#55384C] pl-6 py-2 w-full placeholder-gray-400 text-gray-700"
           />
 
-          {/* Search results */}
           {searchResults.length > 0 && (
             <div className="absolute top-full left-0 mt-2 bg-white shadow-md border border-gray-200 z-50 w-full max-h-64 overflow-y-auto">
               {searchResults.map((result, idx) => (
@@ -133,18 +132,13 @@ export default function ProductModal({ onClose }) {
           )}
         </div>
 
-        {/* Category columns (unchanged) */}
         <div className="flex flex-col md:flex-row gap-24 flex-1 text-[#55384C]">
           {[column1, column2].map((column, idx) => (
             <div className="flex flex-col gap-6" key={idx}>
               {column.map((cat) => (
                 <span
                   key={cat.id}
-                  onClick={() => {
-                    clearFilters();
-                    onClose();
-                    navigate("/products");
-                  }}
+                  onClick={() => handleCategoryClick(cat)}
                   className="cursor-pointer hover:underline hover:text-[#D2AF6E]"
                 >
                   {getDisplayName(cat.name)}

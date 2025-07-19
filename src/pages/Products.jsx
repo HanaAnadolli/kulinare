@@ -25,13 +25,20 @@ export default function Products() {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const query = params.get("search")?.toLowerCase().trim();
-    if (!query) return;
+    const catParam = params.get("category");
 
-    setSearchTerm(query);
-
-    // Clear manual filters when searching
-    setSelectedCategory(null);
-    setSelectedSubcategories([]);
+    if (query) {
+      setSearchTerm(query);
+      setSelectedCategory(null);
+      setSelectedSubcategories([]);
+    } else if (catParam) {
+      const catId = parseInt(catParam);
+      if (!isNaN(catId)) {
+        setSelectedCategory(catId);
+        setSelectedSubcategories([]);
+        setSearchTerm(""); // clear search when filtering by category
+      }
+    }
   }, [location.search]);
 
   return (
