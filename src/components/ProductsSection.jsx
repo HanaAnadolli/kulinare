@@ -87,9 +87,9 @@ function ProductCard({ img, title, desc, tall }) {
           tall
             ? "h-[350px] sm:h-[300px] md:h-[350px] lg:h-full"
             : "h-48 sm:h-56 md:h-64"
-        } object-cover rounded-lg`}
+        } object-cover`}
       />
-      <div className="absolute inset-0 bg-transparent rounded-lg transition-colors duration-200 group-hover:bg-[#55384CE5]" />
+      <div className="absolute inset-0 bg-transparent transition-colors duration-200 group-hover:bg-[#55384CE5]" />
       <div className="absolute bottom-4 left-4 text-white">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="text-sm">{desc}</p>

@@ -20,36 +20,41 @@ export default function AboutUsInfo() {
           </div>
           <div className="flex flex-col justify-center space-y-6">
             <h3 className="text-xl font-semibold text-[#D2AF6E]">
-              Te Kulinare, besojmë se suksesi i një kuzhine nuk fillon vetëm me
-              një recetë të mirë
+              Kush jemi ne
             </h3>
-            <p className="text-gray-700">
-              Ai fillon me pajisjet e duhura, organizimin efikas dhe zgjidhjet
-              profesionale që i japin jetë çdo ideje kulinare.
+            <p className="text-[#000]">
+              Kulinare është një kompani lidere në tregun kosovar, e
+              specializuar <br />
+              në pajisje profesionale për kuzhina, restorante, hotele dhe çdo
+              ambient të <br />
+              industrisë Ho.Re.Ca. Me një përkushtim të thellë ndaj cilësisë,
+              klientit dhe <br />
+              shërbimit, ne ofrojmë zgjidhje moderne dhe të besueshme për
+              përgatitjen, <br />
+              servimin, ruajtjen dhe transportimin e ushqimit.
             </p>
 
-            <p className="text-gray-700">
-              E themeluar në vitin 2006, Kulinare ka ndërtuar reputacionin e saj
-              si një nga furnizuesit më të besueshëm në tregun kosovar për
-              pajisje profesionale të kuzhinës, enë, aksesorë dhe zgjidhje të
-              personalizuara për industrinë e hotelerisë dhe gastronomisë.
+            <h3 className="text-xl font-semibold text-[#55384C]">Qasja jonë</h3>
+            <p className="text-[#000]">
+              Qasja jonë bazohet në tri shtylla kryesore:
             </p>
-            <p className="text-gray-700">
-              Me përvojë të gjatë në këtë sektor dhe me një ekip të përkushtuar
-              profesionistësh, ne jemi gjithmonë pranë klientëve tanë – nga
-              ideja e parë deri te instalimi final i kuzhinës së tyre.
+            <p className="text-[#D2AF6E]">
+              <ul className="text-[#D2AF6E] list-disc pl-5">
+                <li>Përkushtim ndaj klientit</li>
+                <li>Cilësi e padiskutueshme e produkteve</li>
+                <li>Shërbim profesional dhe i kujdesshëm</li>
+              </ul>
             </p>
-            <p className="text-gray-700">
-              Kuzhinierët që punojnë me pajisje cilësore ndihen më të sigurt dhe
-              më të qetë në punën e tyre, ndërsa klientët e tyre e vlerësojnë
-              këtë përmes shijes, komoditetit dhe përvojës që iu ofrojnë.
-            </p>
-            <p className="text-gray-700">
-              Që nga viti 2006, ne kemi qenë zgjidhja e parë për shumë biznese
-              që kërkojnë cilësi, profesionalizëm dhe partnerë të besueshëm.
-              Nëse jeni në fillim të rrugëtimit tuaj ose kërkoni të rrisni
-              performancën e biznesit tuaj, Kulinare është partneri juaj i
-              duhur.
+            <p className="text-[#000]">
+              Ne nuk jemi vetëm një furnitor – jemi partner strategjik për çdo
+              profesionist <br />
+              të gastronomisë që kërkon zgjidhje të personalizuara dhe efikase.
+              Falë <br />
+              përvojës sonë dhe njohurive të thella të industrisë, ne ofrojmë
+              edhe <br />
+              konsulencë dhe projekte të plota për ambientet tuaja, nga kuzhinat
+              e <br />
+              vogla familjare deri te restorantet dhe hotelet më të mëdha.
             </p>
           </div>
         </div>

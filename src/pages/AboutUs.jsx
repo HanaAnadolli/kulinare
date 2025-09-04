@@ -10,17 +10,19 @@ import OurTeam from "../components/OurTeam";
 import BlogSection from "../components/BlogSection";
 import SubscriptionSection from "../components/SubscriptionSection";
 import Footer from "../components/Footer";
+import OurHistory from "../components/OurHistory";
 
 export default function AboutUs() {
   return (
     <>
       <Header />
       <AboutUsInfo />
+      <OurHistory />
       <MissionVision />
-      <ValuesSection />
+      {/* <ValuesSection /> */}
       <ImageSection />
       <StatsSection />
-      <OurTeam />
+      {/* <OurTeam /> */}
       <BlogSection />
       <SubscriptionSection />
       <Footer />
