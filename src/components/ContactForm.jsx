@@ -67,32 +67,32 @@ export default function ContactForm() {
         <p className="text-sm text-gray-700 mb-6">{t("contact.intro2")}</p>
 
         <div className="flex items-start gap-4 mb-6">
-          <img src={location} alt="Address" className="w-[42px] h-[42px]" />
+          <img src={location} alt="Address" className="w-[84px] h-[84px]" />
           <div>
-            <p className="text-sm font-semibold text-black">
+            <p className="text-2xl font-semibold text-black">
               {t("contact.addressLabel")}
             </p>
-            <p className="text-sm text-gray-700">{t("contact.addressText")}</p>
+            <p className="text-base text-gray-700">{t("contact.addressText")}</p>
           </div>
         </div>
 
         <div className="flex items-start gap-4 mb-6">
-          <img src={phone} alt="Phone" className="w-[42px] h-[42px]" />
+          <img src={phone} alt="Phone" className="w-[84px] h-[84px]" />
           <div>
-            <p className="text-sm font-semibold text-black">
+            <p className="text-2xl font-semibold text-black">
               {t("contact.phoneLabel")}
             </p>
-            <p className="text-sm text-gray-700">045 993 366</p>
+            <p className="text-base text-gray-700">045 993 366</p>
           </div>
         </div>
 
         <div className="flex items-start gap-4">
-          <img src={email} alt="Email" className="w-[42px] h-[42px]" />
+          <img src={email} alt="Email" className="w-[84px] h-[84px]" />
           <div>
-            <p className="text-sm font-semibold text-black">
+            <p className="text-2xl font-semibold text-black">
               {t("contact.emailLabel")}
             </p>
-            <p className="text-sm text-gray-700">shitja@kulinare.com</p>
+            <p className="text-base text-gray-700">shitja@kulinare.com</p>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="text-sm font-medium block mb-1">
+            <label className="text-lg font-medium block mb-1">
               {t("contact.firstName")}<span className="text-red-500">*</span>
             </label>
             <input
@@ -115,7 +115,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="text-sm font-medium block mb-1">
+            <label className="text-lg font-medium block mb-1">
               {t("contact.lastName")}<span className="text-red-500">*</span>
             </label>
             <input
@@ -129,7 +129,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="text-sm font-medium block mb-1">
+            <label className="text-lg font-medium block mb-1">
               {t("contact.email")}<span className="text-red-500">*</span>
             </label>
             <input
@@ -143,7 +143,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label className="text-sm font-medium block mb-1">
+            <label className="text-lg font-medium block mb-1">
               {t("contact.phone")}<span className="text-red-500">*</span>
             </label>
             <input
@@ -158,7 +158,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="text-sm font-medium block mb-1">
+          <label className="text-lg font-medium block mb-1">
             {t("contact.message")}
           </label>
           <textarea

@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import QualityIcon from "../assets/icons/quality.svg";
+import BlueprintIcon from "../assets/icons/blueprint.svg";
 import CookingIcon from "../assets/icons/cooking.svg";
-import SettingsIcon from "../assets/icons/settings.svg";
-import CutleryIcon from "../assets/icons/cutlery.svg";
+import ApplianceIcon from "../assets/icons/appliances.svg";
+import CustomerIcon from "../assets/icons/cutlery.svg";
 
 export default function OurServices() {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export default function OurServices() {
           {/* Card 1 */}
           <div className="group border-2 border-[#D2AF6E] rounded-lg p-6 flex flex-col items-center text-center transition-colors duration-200 hover:bg-[#55384C] cursor-pointer">
             <img
-              src={QualityIcon}
+              src={BlueprintIcon}
               alt={t("services.card1.title")}
               className="h-12 w-12 mb-4 group-hover:filter group-hover:brightness-0 group-hover:invert transition-filter duration-200"
             />
@@ -34,7 +34,7 @@ export default function OurServices() {
           {/* Card 2 */}
           <div className="group border-2 border-[#D2AF6E] rounded-lg p-6 flex flex-col items-center text-center transition-colors duration-200 hover:bg-[#55384C] cursor-pointer">
             <img
-              src={CookingIcon}
+              src={ApplianceIcon}
               alt={t("services.card2.title")}
               className="h-12 w-12 mb-4 group-hover:filter group-hover:brightness-0 group-hover:invert transition-filter duration-200"
             />
@@ -49,7 +49,7 @@ export default function OurServices() {
           {/* Card 3 */}
           <div className="group border-2 border-[#D2AF6E] rounded-lg p-6 flex flex-col items-center text-center transition-colors duration-200 hover:bg-[#55384C] cursor-pointer">
             <img
-              src={SettingsIcon}
+              src={CookingIcon}
               alt={t("services.card3.title")}
               className="h-12 w-12 mb-4 group-hover:filter group-hover:brightness-0 group-hover:invert transition-filter duration-200"
             />
@@ -64,7 +64,7 @@ export default function OurServices() {
           {/* Card 4 */}
           <div className="group border-2 border-[#D2AF6E] rounded-lg p-6 flex flex-col items-center text-center transition-colors duration-200 hover:bg-[#55384C] cursor-pointer">
             <img
-              src={CutleryIcon}
+              src={CustomerIcon}
               alt={t("services.card4.title")}
               className="h-12 w-12 mb-4 group-hover:filter group-hover:brightness-0 group-hover:invert transition-filter duration-200"
             />

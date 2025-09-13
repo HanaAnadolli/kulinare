@@ -25,8 +25,8 @@
   "about": {
     "title": "ABOUT US",
     "description1": "The success of a functional kitchen depends on the equipment used.",
-    "description2": "When you have the right tools, the chef feels more confident and relaxed during food preparation. The customer, meanwhile, will thank you for the comfort, unique taste, and unforgettable experience.",
-    "note": "Opened a restaurant and need to equip it? You're in the right place!",
+    "description2": "When you have the right tools, the cook feels safer and more relaxed while preparing the food.",
+    "note": "The right tools bring efficiency for the cook and satisfaction for the customer.",
     "button": "More about us"
   },
   "aboutUs": {
@@ -106,20 +106,20 @@
   "services": {
     "title": "OUR SERVICES",
     "card1": {
-      "title": "Perfect Quality",
-      "description": "Our team of experts helps you plan, design, and install your ideal kitchen."
+      "title": "Design and Implementation of Professional Kitchens",
+      "description": "From idea to realization, we turn your vision into a functional, modern kitchen fully tailored to your needs."
     },
     "card2": {
-      "title": "Unique Designs",
-      "description": "Experience the difference with our professional kitchen planning, design, and installation services."
+      "title": "Sale of Equipment and Tools for Professional Kitchens",
+      "description": "A complete range of equipment and accessories from the most renowned brands, with high quality and always featuring the latest innovations."
     },
     "card3": {
-      "title": "Precise Installations",
-      "description": "Perfect installations and flawless finishes by our specialized team."
+      "title": "Wide Range of Products",
+      "description": "With over 6,000 products for professional kitchens, we provide solutions for every need, taste, and preference."
     },
     "card4": {
-      "title": "Wide Range of Materials",
-      "description": "Save time and effort with our selection of equipment and accessories for your professional kitchen."
+      "title": "Team with Tradition and Professionalism",
+      "description": "Our many years of experience are reflected in our team – trained, dedicated, and always by your side with respect and care."
     }
   },
   "team": {
@@ -137,11 +137,11 @@
   },
   "products": {
     "title": "OUR PRODUCTS",
-    "view_more": "View More",
+    "view_more": "Browse our catalog",
     "description": {
-      "part1": "Our products include professional equipment, high-quality utensils and innovative accessories for kitchens,",
-      "highlight": "bars and restaurants",
-      "part2": ", ensuring functionality, style, and durability."
+      "part1": "Our products include professional equipment, tools, utensils, and innovative accessories for kitchens, bars, and restaurants.",
+      "highlight": "Every product is selected to guarantee functionality, quality, and durability.",
+      "part2": ""
     },
     "items": {
       "kitchen_equipment": {
@@ -222,6 +222,9 @@
   "contact.title": "CONTACT US",
   "products.title": "OUR PRODUCTS",
   "products.filter": "Filter categories",
-  "search_placeholder": "Search product..."
+  "search_placeholder": "Search product...",
+  "contactHero": {
+    "text": "Join a workplace where work has meaning and people are the greatest value.",
+    "cta": "Become part of the team"
+  }
 }
-  

@@ -25,8 +25,8 @@
     "about": {
     "title": "RRETH NESH",
     "description1": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren.",
-    "description2": "Kur ke pajisjet e duhura, kuzhinieri ndihet më i sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit. Klienti ndërkaq do t’ju falënderojë për komforin, shijen unike dhe përjetimin e paharrueshëm.",
-    "note": "Keni hapur restorant dhe po kërkoni për ta pajisur? Jeni në vendin e duhur!",
+    "description2": "Kur ke pajisjet e duhura, kuzhinieri ndihet më sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit.",
+    "note": "Pajisjet e duhura sjellin efikasitet për kuzhinierin dhe kënaqësi për klientin.",
     "button": "Më shumë rreth nesh"
   },
   "aboutUs": {
@@ -106,20 +106,20 @@
   "services": {
     "title": "SHËRBIMET TONA",
     "card1": {
-      "title": "Cilësi e Përsosur",
-      "description": "Ekipi ynë i ekspertëve ju ndihmon të planifikoni, dizajnoni dhe instaloni kuzhinën tuaj ideale."
+      "title": "Projektim dhe realizim i kuzhinave profesionale",
+      "description": "Nga ideja te realizimi, ne kthejmë vizionin tuaj në një kuzhinë funksionale, moderne dhe plotësisht të përshtatur me nevojat tuaja."
     },
     "card2": {
-      "title": "Dizajne Unike",
-      "description": "Përjetoni ndryshimin me shërbimet tona të planifikimit, dizajnimit dhe instalimit të kuzhinave profesionale."
+      "title": "Shitje e pajisjeve dhe veglave për kuzhina profesionale",
+      "description": "Një gamë e plotë pajisjesh dhe aksesorësh nga brendet më të njohura, me cilësi të lartë dhe gjithmonë me risitë e fundit."
     },
     "card3": {
-      "title": "Instalime Precize",
-      "description": "Instalime të përsosura dhe përfundime perfekte nga ekipi ynë i specializuar."
+      "title": "Gamë e gjerë produktesh",
+      "description": "Me mbi 6,000 produkte për kuzhina profesionale, ofrojmë zgjidhje për çdo nevojë, shije dhe preferencë."
     },
     "card4": {
-      "title": "Gama e Gjerë e Materialeve",
-      "description": "Kurseni kohë dhe mund me zgjedhjet tona të pajisjeve dhe aksesorëve për kuzhinën tuaj profesionale."
+      "title": "Staf me traditë dhe profesionalizëm",
+      "description": "Përvoja jonë shumëvjeçare është pasqyruar në ekipin tonë – i trajnuar, i përkushtuar dhe gjithmonë pranë jush me respekt dhe kujdes."
     }
   },
   "team": {
@@ -137,11 +137,11 @@
   },
   "products": {
     "title": "PRODUKTET TONA",
-    "view_more": "Shikoni më shumë",
+    "view_more": "Shfleto katallogun tonë",
     "description": {
-      "part1": "Produktet tona përfshijnë pajisje profesionale, enë cilësore dhe aksesorë inovativë për kuzhina,",
-      "highlight": "bare dhe restorante",
-      "part2": ", duke garantuar funksionalitet, stil dhe qëndrueshmëri."
+      "part1": "Produktet tona përfshijnë pajisje profesionale, vegla pune, enë dhe aksesorë inovativë për kuzhina, bare dhe restorante.",
+      "highlight": "Çdo produkt është zgjedhur për të garantuar funksionalitet, cilësi dhe qëndrueshmëri.",
+      "part2": ""
     },
     "items": {
       "kitchen_equipment": {
@@ -222,6 +222,10 @@
   "contact.title": "NA KONTAKTONI",
   "products.title": "PRODUKTET TONA",
   "products.filter": "Filtro kategoritë",
-  "search_placeholder": "Kërko produktin..."
+  "search_placeholder": "Kërko produktin...",
+    "contactHero": {
+    "text": "Bashkohu me një vend pune ku puna ka kuptim dhe njerëzit janë vlera më e madhe.",
+    "cta": "Bohu pjesë e ekipit"
+  }
 }
   

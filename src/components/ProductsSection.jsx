@@ -93,7 +93,7 @@ function ProductCard({ img, title, desc, tall }) {
       <div className="absolute bottom-4 left-4 text-white">
         <h3 className="text-xl font-semibold">{title}</h3>
         <p className="text-sm">{desc}</p>
-        <span className="block h-[1px] bg-white w-10 opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:w-30 mt-1 mb-2"></span>
+        <span className="block h-[1px] bg-white w-10 opacity-100 transition-all duration-200 group-hover:w-30 mt-1 mb-2"></span>
       </div>
     </div>
   );
