@@ -5,18 +5,33 @@ import { FiMenu, FiX } from "react-icons/fi";
 import ProductModal from "./ProductModal";
 import { useTranslation } from "react-i18next";
 
+// Flags
+import USFlag from "../assets/flags/united-states.png";
+import ALFlag from "../assets/flags/albania.png";
+
 export default function Header() {
+  // Products modal (kept as-is)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Language dropdowns (desktop & mobile)
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { i18n, t } = useTranslation();
 
-  const handleLanguageChange = (e) => {
-    const lang = e.target.value;
+  const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("lang", lang);
+    setIsLangOpen(false);
+    setIsMobileLangOpen(false);
+    setIsMobileMenuOpen(false);
   };
 
   const handleCloseMobile = () => setIsMobileMenuOpen(false);
+
+  const currentFlag = i18n.language === "sq" ? ALFlag : USFlag;
+  const currentAlt = i18n.language === "sq" ? "Shqip" : "English";
 
   return (
     <header className="bg-[#55384C] sticky top-0 z-50">
@@ -37,7 +52,7 @@ export default function Header() {
             <div className="bg-[#D2AF6E] h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
           </Link>
           <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            onClick={() => setIsDropdownOpen((v) => !v)}
             className="text-white p-2 px-4 group text-lg focus:outline-none"
           >
             {t("nav.products")}
@@ -53,16 +68,49 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Language + Contact */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <select
-            value={i18n.language}
-            onChange={handleLanguageChange}
-            className="bg-[#55384C] text-white px-2 py-1"
-          >
-            <option value="en">EN</option>
-            <option value="sq">SQ</option>
-          </select>
+        {/* Language + Contact (Desktop) */}
+        <div className="hidden lg:flex items-center space-x-4 relative">
+          {/* Language custom dropdown with flags */}
+          <div className="relative">
+            <button
+              onClick={() => setIsLangOpen((v) => !v)}
+              className="flex items-center gap-2 bg-[#55384C] text-white px-2 py-1 rounded focus:outline-none"
+              aria-haspopup="listbox"
+              aria-expanded={isLangOpen}
+            >
+              <img src={currentFlag} alt={currentAlt} className="h-5 w-7" />
+            </button>
+
+            {isLangOpen && (
+              <div
+                className="absolute right-0 mt-2 w-36 bg-white shadow-lg rounded border overflow-hidden"
+                role="listbox"
+              >
+                <button
+                  onClick={() => handleLanguageChange("en")}
+                  className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
+                    i18n.language === "en" ? "bg-gray-50" : ""
+                  }`}
+                  role="option"
+                  aria-selected={i18n.language === "en"}
+                >
+                  <img src={USFlag} alt="English" className="h-5 w-7 mr-2" />
+                  <span className="text-sm">English</span>
+                </button>
+                <button
+                  onClick={() => handleLanguageChange("sq")}
+                  className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
+                    i18n.language === "sq" ? "bg-gray-50" : ""
+                  }`}
+                  role="option"
+                  aria-selected={i18n.language === "sq"}
+                >
+                  <img src={ALFlag} alt="Shqip" className="h-5 w-7 mr-2" />
+                  <span className="text-sm">Shqip</span>
+                </button>
+              </div>
+            )}
+          </div>
 
           <Link
             to="/contact-us"
@@ -75,8 +123,9 @@ export default function Header() {
         {/* Hamburger */}
         <div className="lg:hidden">
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
             className="text-white text-2xl"
+            aria-label="Open Menu"
           >
             {isMobileMenuOpen ? <FiX /> : <FiMenu />}
           </button>
@@ -84,9 +133,7 @@ export default function Header() {
       </div>
 
       {/* Product Modal */}
-      {isDropdownOpen && (
-        <ProductModal onClose={() => setIsDropdownOpen(false)} />
-      )}
+      {isDropdownOpen && <ProductModal onClose={() => setIsDropdownOpen(false)} />}
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
@@ -100,6 +147,7 @@ export default function Header() {
               <FiX />
             </button>
           </div>
+
           <nav className="flex flex-col space-y-6 text-[#55384C] font-semibold text-lg px-6">
             <Link to="/" onClick={handleCloseMobile}>
               {t("nav.home")}
@@ -126,18 +174,50 @@ export default function Header() {
               {t("nav.contact")}
             </Link>
 
-            <select
-              value={i18n.language}
-              onChange={(e) => {
-                i18n.changeLanguage(e.target.value);
-                localStorage.setItem("lang", e.target.value);
-                setIsMobileMenuOpen(false);
-              }}
-              className="border border-[#55384C] text-[#55384C] rounded px-2 py-1 mt-4"
-            >
-              <option value="en">{t("lang.english")}</option>
-              <option value="sq">{t("lang.albanian")}</option>
-            </select>
+            {/* Mobile: Language custom dropdown with flags */}
+            <div className="relative mt-2">
+              <button
+                onClick={() => setIsMobileLangOpen((v) => !v)}
+                className="flex items-center gap-2 border border-[#55384C] text-[#55384C] rounded px-3 py-2 w-max"
+                aria-haspopup="listbox"
+                aria-expanded={isMobileLangOpen}
+              >
+                <img src={currentFlag} alt={currentAlt} className="h-5 w-7" />
+                <span className="text-base">
+                  {i18n.language === "sq" ? "Shqip" : "English"}
+                </span>
+              </button>
+
+              {isMobileLangOpen && (
+                <div
+                  className="absolute mt-2 bg-white shadow-lg rounded border overflow-hidden"
+                  role="listbox"
+                >
+                  <button
+                    onClick={() => handleLanguageChange("en")}
+                    className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
+                      i18n.language === "en" ? "bg-gray-50" : ""
+                    }`}
+                    role="option"
+                    aria-selected={i18n.language === "en"}
+                  >
+                    <img src={USFlag} alt="English" className="h-5 w-7 mr-2" />
+                    <span>English</span>
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange("sq")}
+                    className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
+                      i18n.language === "sq" ? "bg-gray-50" : ""
+                    }`}
+                    role="option"
+                    aria-selected={i18n.language === "sq"}
+                  >
+                    <img src={ALFlag} alt="Shqip" className="h-5 w-7 mr-2" />
+                    <span>Shqip</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </nav>
         </div>
       )}
