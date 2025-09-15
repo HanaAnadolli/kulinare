@@ -23,8 +23,8 @@ export default function Home() {
       <OurServices />
       {/* <DetailsSection /> */}
       <ProductsSection />
-      <VideoSection />
       <LogosSlider />
+      <VideoSection />
       <Gallery />
       <TestimonialSlider />
       <BlogSection />

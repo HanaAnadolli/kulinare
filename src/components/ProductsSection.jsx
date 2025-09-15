@@ -11,7 +11,7 @@ export default function ProductsSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-4 md:py-16 bg-gray-50">
+    <section className="py-4 md:py-16 bg-[#F2F2F2;]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start justify-between mb-8">
           <div className="md:w-2/3">
