@@ -13,18 +13,20 @@ import ContactUs from "./pages/ContactUs";
 import { ProductFilterProvider } from "./context/ProductFilterContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import ScrollToTop from "./components/ScrollToTop";
+import RestaurantGallery from "./pages/RestaurantGallery";
 
 export default function App() {
   const { t } = useTranslation();
 
   return (
     <ProductFilterProvider>
-      <ScrollToTop />   
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<RestaurantGallery />} />
+        <Route path="/gallery/:id" element={<Gallery />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/contact-us" element={<ContactUs />} />
