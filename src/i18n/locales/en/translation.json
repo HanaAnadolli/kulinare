@@ -226,5 +226,35 @@
   "contactHero": {
     "text": "Join a workplace where work has meaning and people are the greatest value.",
     "cta": "Become part of the team"
+  },
+  "about": {
+    "section_label": "ABOUT US",
+    "title": "Who we are",
+    "image_alt": "Kulinare",
+    "lead": "Since 2006, Kulinare has been a leading company in Kosovo specializing in professional equipment for kitchens, restaurants, hotels, and all Ho.Re.Ca. environments. With deep commitment to quality, the customer, and service, we provide modern and reliable solutions for food preparation, serving, storage, and transportation.",
+    "values_title": "Our values:",
+    "values": {
+      "customer_focus": {
+        "title": "Customer dedication",
+        "body": "Every decision and action is guided by our customers’ needs and expectations."
+      },
+      "high_quality": {
+        "title": "High product quality",
+        "body": "We provide only equipment that meets the highest market standards."
+      },
+      "sustainable_supply": {
+        "title": "Sustainable supply",
+        "body": "We ensure continuity and reliability, with products that support a long-term supply chain."
+      },
+      "professional_service": {
+        "title": "Professional service",
+        "body": "From consulting to installation and service, our team offers support with professionalism and integrity."
+      }
+    },
+    "closing": "We’re not just a supplier — we’re a strategic partner for gastronomy professionals seeking personalized, efficient solutions. With our experience and deep industry know-how, we deliver consulting and end-to-end projects for your spaces."
+  },
+    "history": {
+    "title": "Our History",
+    "image_alt": "History photo"
   }
 }

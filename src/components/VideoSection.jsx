@@ -27,7 +27,7 @@ export default function VideoSection() {
           </button>
         </a> */}
 
-        <h2 className="text-2xl font-bold text-[#D2AF6E]">
+        <h2 className="text-2xl font-bold uppercase text-[#D2AF6E]">
           {t("video.title")}
         </h2>
       </div>

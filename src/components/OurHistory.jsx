@@ -1,34 +1,42 @@
-import React from 'react'
+import React from "react";
+import { useTranslation } from "react-i18next";
+import History2006 from "../assets/images/history-2006.png";
+import History2016 from "../assets/images/history-2016.png";
 
-function OurHistory() {
+export default function OurHistory() {
+  const { t } = useTranslation();
+
+  const history = [
+    { year: "2006", image: History2006 },
+    { year: "2016", image: History2016 },
+  ];
+
   return (
-    <section className="bg-white py-12 px-6 text-center">
-      {/* Title */}
-      <h2 className="text-2xl font-bold text-[#D2AF6E] mb-6">
-        Historia Jonë
-      </h2>
+    <section className="bg-white py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+          {/* Title column */}
+          <div className="flex items-center justify-center md:justify-start h-full">
+            <h2 className="text-xl md:text-2xl font-semibold text-[#D2AF6E] tracking-wide text-center md:text-left">
+              {t("history.title")}
+            </h2>
+          </div>
 
-      {/* Intro paragraph */}
-      <p className="text-gray-800 max-w-3xl mx-auto mb-6">
-        Që nga fillimet tona, kemi bashkëpunuar me marka dhe prodhues
-        ndërkombëtarë të njohur, të cilët garantojnë:
-      </p>
-
-      {/* Bullet list */}
-      <ul className="text-[#D2AF6E] list-disc list-inside space-y-2 mb-6">
-        <li>Cilësi të lartë të produkteve</li>
-        <li>Furnizim të qëndrueshëm</li>
-        <li>Shërbim të shkëlqyer pas shitjes</li>
-      </ul>
-
-      {/* Closing paragraph */}
-      <p className="text-gray-800 max-w-3xl mx-auto">
-        Këto bashkëpunime na mundësojnë të sjellim produkte që i përgjigjen
-        standardeve më të larta të tregut global dhe të përshtaten me kërkesat
-        unike të klientëve tanë.
-      </p>
+          {/* History images */}
+          {history.map((item, idx) => (
+            <div key={idx} className="flex flex-col items-center">
+              <img
+                src={item.image}
+                alt={`${t("history.image_alt")} ${item.year}`}
+                className="w-full h-[402px] rounded-lg object-cover shadow-md"
+              />
+              <p className="mt-4 text-lg md:text-xl font-bold text-gray-800">
+                {item.year}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
-  )
+  );
 }
-
-export default OurHistory

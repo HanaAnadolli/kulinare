@@ -1,28 +1,28 @@
 {
-    "nav": {
-      "home": "Ballina",
-      "about": "Rreth Nesh",
-      "products": "Produktet",
-      "gallery": "Galeria",
-      "blog": "Blog",
-      "contact": "Na kontaktoni"
-    },
-    "lang": {
-      "english": "Anglisht",
-      "albanian": "Shqip"
-    },
-      "footer": {
-      "description": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren. Kur ke pajisjet e duhura, kuzhinieri ndihet më i sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit.",
-      "infoTitle": "Informacioni:",
-      "linksTitle": "Linqet:",
-      "securityTitle": "Siguria:",
-      "terms": "Termet dhe kushtet",
-      "privacy": "Politika e Privatësisë",
-      "faq": "FAQ",
-      "cookies": "Cookies",
-      "copyright": "Copyright © 2025 Kulinare. Të gjitha të drejtat e rezervuara."
-    },
-    "about": {
+  "nav": {
+    "home": "Ballina",
+    "about": "Rreth Nesh",
+    "products": "Produktet",
+    "gallery": "Galeria",
+    "blog": "Blog",
+    "contact": "Na kontaktoni"
+  },
+  "lang": {
+    "english": "Anglisht",
+    "albanian": "Shqip"
+  },
+  "footer": {
+    "description": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren. Kur ke pajisjet e duhura, kuzhinieri ndihet më i sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit.",
+    "infoTitle": "Informacioni:",
+    "linksTitle": "Linqet:",
+    "securityTitle": "Siguria:",
+    "terms": "Termet dhe kushtet",
+    "privacy": "Politika e Privatësisë",
+    "faq": "FAQ",
+    "cookies": "Cookies",
+    "copyright": "Copyright © 2025 Kulinare. Të gjitha të drejtat e rezervuara."
+  },
+  "about": {
     "title": "RRETH NESH",
     "description1": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren.",
     "description2": "Kur ke pajisjet e duhura, kuzhinieri ndihet më sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit.",
@@ -42,15 +42,15 @@
     "title": "LAJMET TONA MË TË FUNDIT",
     "readMore": "Lexo më shumë",
     "posts": [
-    {
-      "title": "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine"
-    },
-    {
-      "title": "Nga tefet te djerrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës"
-    },
-    {
-      "title": "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie"
-    }
+      {
+        "title": "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine"
+      },
+      {
+        "title": "Nga tefet te djerrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës"
+      },
+      {
+        "title": "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie"
+      }
     ]
   },
   "months": {
@@ -223,9 +223,39 @@
   "products.title": "PRODUKTET TONA",
   "products.filter": "Filtro kategoritë",
   "search_placeholder": "Kërko produktin...",
-    "contactHero": {
+  "contactHero": {
     "text": "Bashkohu me një vend pune ku puna ka kuptim dhe njerëzit janë vlera më e madhe.",
     "cta": "Bohu pjesë e ekipit"
+  },
+
+  "about": {
+    "section_label": "RRETH NESH",
+    "title": "Kush jemi ne",
+    "image_alt": "Kulinare",
+    "lead": "Kulinare është një kompani lidere në tregun kosovar që nga 2006, e specializuar në pajisje profesionale për kuzhina, restorante, hotele dhe çdo ambient të industrisë Ho.Re.Ca. Me përkushtim ndaj cilësisë, klientit dhe shërbimit, ofrojmë zgjidhje moderne dhe të besueshme për përgatitjen, servimin, ruajtjen dhe transportimin e ushqimit.",
+    "values_title": "Vlerat tona:",
+    "values": {
+      "customer_focus": {
+        "title": "Përkushtim ndaj klientit",
+        "body": "Çdo vendim dhe veprim udhëhiqet nga nevojat dhe pritshmëritë e klientëve tanë."
+      },
+      "high_quality": {
+        "title": "Cilësi e lartë e produkteve",
+        "body": "Ofronim vetëm pajisje që plotësojnë standardet më të larta të tregut."
+      },
+      "sustainable_supply": {
+        "title": "Furnizim i qëndrueshëm",
+        "body": "Sigurojmë vazhdimësi dhe besueshmëri, me produkte që kontribuojnë në zinxhir furnizimi afatgjatë."
+      },
+      "professional_service": {
+        "title": "Shërbim profesional",
+        "body": "Nga konsultimi deri te instalimi dhe servisi, ekipi ynë ofron mbështetje me profesionalizëm dhe korrektësi."
+      }
+    },
+    "closing": "Ne nuk jemi vetëm furnitor – jemi partner strategjik për profesionistët e gastronomisë që kërkojnë zgjidhje të personalizuara dhe efikase. Falë përvojës dhe njohurive tona, ofrojmë konsulencë dhe projekte të plota për ambientet tuaja."
+  },
+    "history": {
+    "title": "Historia Jonë",
+    "image_alt": "Foto e historisë"
   }
 }
-  
