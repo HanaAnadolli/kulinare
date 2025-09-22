@@ -8,17 +8,10 @@
       }
     },
     {
-      "id": 2,
-      "name": {
-        "en": "Buffet",
-        "sq": "Buffet"
-      }
-    },
-    {
       "id": 3,
       "name": {
-        "en": "Bar",
-        "sq": "Bari"
+        "en": "Bar and Buffet",
+        "sq": "Bari dhe Buffet"
       }
     },
     {
@@ -36,38 +29,10 @@
       }
     },
     {
-      "id": 6,
-      "name": {
-        "en": "Carts and Baskets",
-        "sq": "Karroca dhe Shporta"
-      }
-    },
-    {
-      "id": 7,
-      "name": {
-        "en": "Staff clothing",
-        "sq": "Veshje personeli"
-      }
-    },
-    {
       "id": 8,
       "name": {
         "en": "Detergents",
         "sq": "Deterxhentet"
-      }
-    },
-    {
-      "id": 9,
-      "name": {
-        "en": "Pajisje kuzhine",
-        "sq": "Pajisje kuzhine"
-      }
-    },
-    {
-      "id": 10,
-      "name": {
-        "en": "Artikuj hoteli",
-        "sq": "Artikuj hoteli"
       }
     }
   ],
@@ -215,24 +180,6 @@
       },
       "category_id": 9,
       "image": "kulinare_images/pajisje_kuzhine/enelarese.jpeg"
-    },
-    {
-      "id": 18,
-      "name": {
-        "en": "Pajisje per ngrohje ushqimi",
-        "sq": "Pajisje per ngrohje ushqimi"
-      },
-      "category_id": 2,
-      "image": "kulinare_images/buffet/ngorhje-ushqimi.jpg"
-    },
-    {
-      "id": 19,
-      "name": {
-        "en": "Ene per prezentim te ushqimit",
-        "sq": "Ene per prezentim te ushqimit"
-      },
-      "category_id": 2,
-      "image": "kulinare_images/buffet/ene-per-prezentim-te-ushqimit.jpg"
     },
     {
       "id": 20,

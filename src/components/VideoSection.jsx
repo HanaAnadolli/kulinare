@@ -16,18 +16,20 @@ export default function VideoSection() {
       />
       <div className="absolute inset-0 bg-black/60"></div>
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 md:px-0">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#D2AF6E]">
-          {t("video.title")}
-        </h2>
+        
 
-        <p className="mt-4 max-w-2xl text-white text-sm md:text-base">
+        <p className="mt-4 max-w-2xl text-white text-2xl md:text-base">
           {t("video.description")}
         </p>
-        <a href="/products">
+        {/* <a href="/products">
           <button className="mt-8 px-6 py-3 border-2 text-[#D2AF6E] rounded hover:bg-[#fff] hover:text-[#55384C] transition-colors duration-200">
             {t("video.button")}
           </button>
-        </a>
+        </a> */}
+
+        <h2 className="text-2xl font-bold text-[#D2AF6E]">
+          {t("video.title")}
+        </h2>
       </div>
     </section>
   );

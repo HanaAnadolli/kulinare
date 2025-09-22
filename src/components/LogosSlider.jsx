@@ -15,7 +15,16 @@ import SanitecLogo    from "../assets/logos/sanitec.png";
 import DihrLogo       from "../assets/logos/DIHR.png";
 import BormioliLogo   from "../assets/logos/Bormioli.png";
 
-export default function LogosSlider() {
+/**
+ * Pure JS + CSS (no TypeScript, no Tailwind required)
+ * Responsive, seamless logos slider with strong defaults.
+ */
+export default function LogosSlider({
+  height = 180,   // viewport height in px
+  gap = 24,       // px between items
+  speed = 30,     // seconds to traverse half-track
+  grayscale = true,
+}) {
   const logos = [
     { src: KulinareLogo,   alt: "Kulinare" },
     { src: MarenoLogo,     alt: "Mareno" },
@@ -33,71 +42,93 @@ export default function LogosSlider() {
     { src: SanitecLogo,    alt: "Sanitec" },
   ];
 
+  const styleVars = {
+    "--logos-height": `${height}px`,
+    "--logos-gap": `${gap}px`,
+    "--logos-speed": `${Math.max(6, Number(speed))}s`,
+    "--logos-per-view": 5,
+  };
+
   return (
-    <div className="relative">
-      <div className="max-w-7xl mx-auto overflow-hidden">
-        {/* Viewport (Figma sizes) */}
-        <div className="logos-viewport">
-          {/* Track (duplicated for seamless loop) */}
-          <div className="logos-track">
-            {[...logos, ...logos].map((logo, idx) => (
-              <div key={idx} className="logo-item">
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="logo-img"
-                />
-              </div>
-            ))}
-          </div>
+    <div className="logos-wrapper" style={styleVars}>
+      <div className="logos-viewport" aria-label="Our partners" role="region">
+        <div className="logos-track">
+          {[...logos, ...logos].map((logo, idx) => (
+            <div key={idx} className="logo-item">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className={grayscale ? "logo-img logo-gray" : "logo-img"}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
       <style>{`
-        /* Figma-aligned viewport */
-        .logos-viewport {
-          display: flex;
-          height: 196px;
-          padding: 26px 100px;
+        .logos-viewport { 
+          height: var(--logos-height);
+          overflow: hidden; 
+          padding: 20px 16px; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          max-width: 1200px; 
+          margin: 0 auto;
+        }
+
+        .logos-track { 
+          display: flex; 
+          align-items: center; 
+          gap: var(--logos-gap); 
+          white-space: nowrap; 
+          animation: logosroll var(--logos-speed) linear infinite;
+          will-change: transform;
+        }
+
+        /* Pause on hover/focus */
+        .logos-viewport:hover .logos-track, 
+        .logos-viewport:focus-within .logos-track { 
+          animation-play-state: paused; 
+        }
+
+        /* Responsive number of logos per view */
+        :root { --logos-per-view: 2; }
+        @media (min-width: 480px) { :root { --logos-per-view: 3; } }
+        @media (min-width: 768px) { :root { --logos-per-view: 4; } }
+        @media (min-width: 1024px){ :root { --logos-per-view: 5; } }
+        @media (min-width: 1280px){ :root { --logos-per-view: 6; } }
+
+        .logo-item { 
+          flex: 0 0 calc(100% / var(--logos-per-view));
+          display: flex; 
+          align-items: center; 
           justify-content: center;
-          align-items: center;
-          align-self: stretch;
-          overflow: hidden;
         }
 
-        /* Pause animation on hover */
-        .logos-viewport:hover .logos-track {
-          animation-play-state: paused;
+        .logo-img { 
+          display: block; 
+          max-width: 100%; 
+          max-height: 144px; 
+          height: auto; 
+          object-fit: contain; 
+          opacity: 0.9;
+          transition: transform 0.3s ease;
+        }
+        .logo-img:hover { transform: scale(1.04); }
+        .logo-gray { filter: grayscale(100%); }
+
+        /* Keyframes for seamless loop */
+        @keyframes logosroll { 
+          0% { transform: translateX(0); } 
+          100% { transform: translateX(-50%); } 
         }
 
-        /* Track */
-        .logos-track {
-          display: flex;
-          align-items: center;
-          white-space: nowrap;
-          animation: logosroll 30s linear infinite;
-        }
-
-        /* Exactly 5 logos visible at any time */
-        .logo-item {
-          flex: 0 0 calc(100% / 5); /* each item is 20% of the viewport width */
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        /* Logo sizing (Figma) */
-        .logo-img {
-          max-height: 144px;         /* per your note */
-          object-fit: contain;
-          filter: grayscale(100%);
-          opacity: 0.8;
-        }
-
-        /* Seamless loop: move by half the track since we duplicate the array */
-        @keyframes logosroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+        /* Reduced motion accessibility */
+        @media (prefers-reduced-motion: reduce) { 
+          .logos-track { animation: none; transform: none; }
         }
       `}</style>
     </div>
