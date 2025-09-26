@@ -66,7 +66,6 @@ export default function Gallery() {
         .filter(([path]) => path.includes(folderName))
         .map(([path, module]) => module.default);
 
-      console.log(`Loaded ${restaurantImages.length} images for ${folderName}`);
       setImages(restaurantImages);
     } catch (error) {
       console.error('Error loading images:', error);

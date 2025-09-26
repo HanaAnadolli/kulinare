@@ -51,7 +51,6 @@ export default function Gallery() {
           filename: path.split('/').pop()
         }));
 
-      console.log(`Loaded ${restaurantImages.length} images for ${folderName}`);
       setRestaurantImages(restaurantImages);
     } catch (error) {
       console.error('Error loading images:', error);

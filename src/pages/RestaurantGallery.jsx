@@ -1,34 +1,53 @@
 // src/pages/RestaurantGallery.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 // Restaurant data matching the actual folders
 const restaurants = [
-  { id: "al-trade", name: "Al Trade", cover: "/src/assets/images/gallery1.png" },
-  {
-    id: "faiku-palace",
-    name: "Faiku Palace - Viti",
-    cover: "/src/assets/images/gallery2.png",
-  },
-  {
-    id: "gizzi",
-    name: "Gizzi",
-    cover: "/src/assets/images/gallery3.png",
-  },
-  { id: "la-terraca", name: "La Terraca - Hani Elezit", cover: "/src/assets/images/gallery4.png" },
-  { id: "missini-sweets", name: "Missini Sweets", cover: "/src/assets/images/gallery5.png" },
-  {
-    id: "osteria-basilico",
-    name: "Osteria Basilico",
-    cover: "/src/assets/images/gallery6.png",
-  },
-  { id: "sach-pizza", name: "Sach Pizza", cover: "/src/assets/images/gallery7.png" },
-  { id: "sol-venus", name: "SOL by Venus Hotel", cover: "/src/assets/images/gallery8.png" },
+  { id: "al-trade", name: "Al Trade", folder: "Al Trade foto" },
+  { id: "faiku-palace", name: "Faiku Palace - Viti", folder: "Faiku Palace -Viti" },
+  { id: "gizzi", name: "Gizzi", folder: "Gizzi" },
+  { id: "la-terraca", name: "La Terraca - Hani Elezit", folder: "La Terraca - Hani Elezit" },
+  { id: "missini-sweets", name: "Missini Sweets", folder: "Missini Sweets" },
+  { id: "osteria-basilico", name: "Osteria Basilico", folder: "Osteria Basilico" },
+  { id: "sach-pizza", name: "Sach Pizza", folder: "Sach Pizza" },
+  { id: "sol-venus", name: "SOL by Venus Hotel", folder: "SOL by Vneus Hotel" },
 ];
 
 export default function RestaurantGallery() {
+  const [restaurantCovers, setRestaurantCovers] = useState({});
+
+  useEffect(() => {
+    // Load first image from each restaurant folder as cover
+    const loadCovers = async () => {
+      try {
+        // Import all images from all restaurant folders
+        const allImageImports = import.meta.glob('/src/assets/*/*.{png,jpg,jpeg,JPG}', { eager: true });
+        
+        const covers = {};
+        
+        restaurants.forEach(restaurant => {
+          // Find first image for this restaurant
+          const restaurantImages = Object.entries(allImageImports)
+            .filter(([path]) => path.includes(restaurant.folder))
+            .map(([path, module]) => module.default);
+          
+          if (restaurantImages.length > 0) {
+            covers[restaurant.id] = restaurantImages[0];
+          }
+        });
+        
+        setRestaurantCovers(covers);
+      } catch (error) {
+        console.error('Error loading restaurant covers:', error);
+      }
+    };
+
+    loadCovers();
+  }, []);
+
   return (
     <>
       <Header />
@@ -44,14 +63,21 @@ export default function RestaurantGallery() {
               <Link
                 key={r.id}
                 to={`/gallery/${r.id}`}
-                className="grouptransition duration-300"
+                className="group transition duration-300"
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={r.cover}
-                    alt={r.name}
-                    className="w-full h-[300px] object-cover transform scale-110 transition duration-500 ease-in-out hover:scale-100"
-                  />
+                  {restaurantCovers[r.id] ? (
+                    <img
+                      src={restaurantCovers[r.id]}
+                      alt={r.name}
+                      className="w-full h-[300px] object-cover transform scale-110 transition duration-500 ease-in-out hover:scale-100"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-[300px] bg-gray-300 flex items-center justify-center">
+                      <span className="text-gray-500">Loading...</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Title */}
