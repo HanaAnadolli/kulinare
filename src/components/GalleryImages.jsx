@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // Utility: chunk array into rows of 4
@@ -10,32 +10,53 @@ function chunkArray(array, size) {
   return result;
 }
 
-export default function GalleryImages() {
+export default function GalleryImages({ selectedRestaurant }) {
   const { t } = useTranslation();
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  // Import all images from the folder using Vite
-  const imageImports = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg}', { eager: true });
-  
-  // List of filenames to display
-  const imageFilenames = [
-    "gallery1.png",
-    "gallery2.png",
-    "gallery3.png",
-    "gallery4.png",
-    "gallery5.png",
-    "gallery6.png",
-    "gallery7.png",
-    "gallery8.png"
+  // Restaurant data with their folder names
+  const restaurants = [
+    { id: 1, name: "Al Trade", folder: "Al Trade foto" },
+    { id: 2, name: "Faiku Palace - Viti", folder: "Faiku Palace -Viti" },
+    { id: 3, name: "Gizzi", folder: "Gizzi" },
+    { id: 4, name: "La Terraca - Hani Elezit", folder: "La Terraca - Hani Elezit" },
+    { id: 5, name: "Missini Sweets", folder: "Missini Sweets" },
+    { id: 6, name: "Osteria Basilico", folder: "Osteria Basilico" },
+    { id: 7, name: "Sach Pizza", folder: "Sach Pizza" },
+    { id: 8, name: "SOL by Venus Hotel", folder: "SOL by Vneus Hotel" }
   ];
 
-  // Map filenames to the imported URLs
-  const images = imageFilenames.map((name, idx) => {
-    const fullPath = `/src/assets/images/${name}`;
-    return {
-      id: idx + 1,
-      image_url: imageImports[fullPath]?.default || ""
-    };
-  });
+  // Load images for the selected restaurant
+  useEffect(() => {
+    if (selectedRestaurant) {
+      setLoading(true);
+      loadRestaurantImages(selectedRestaurant.folder);
+    }
+  }, [selectedRestaurant]);
+
+  const loadRestaurantImages = async (folderName) => {
+    try {
+      // Import all images from the specific restaurant folder
+      const imageImports = import.meta.glob('/src/assets/*/*.{png,jpg,jpeg,JPG}', { eager: true });
+      
+      // Filter images for the specific restaurant folder
+      const restaurantImages = Object.entries(imageImports)
+        .filter(([path]) => path.includes(folderName))
+        .map(([path, module], index) => ({
+          id: index + 1,
+          image_url: module.default,
+          filename: path.split('/').pop()
+        }));
+
+      setImages(restaurantImages);
+    } catch (error) {
+      console.error('Error loading images:', error);
+      setImages([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -53,13 +74,24 @@ export default function GalleryImages() {
 
   const imageChunks = chunkArray(images, 4);
 
+  // Don't render if no restaurant is selected
+  if (!selectedRestaurant) {
+    return null;
+  }
+
   return (
     <section className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-2xl font-semibold text-[#D2AF6E] mb-2">
-          {t("gallery.dynamicTitle")}
+          {selectedRestaurant.name}
         </h2>
         <div className="border-b border-gray-400 mb-8"></div>
+
+        {loading && (
+          <div className="text-center py-8">
+            <p className="text-gray-600">{t("gallery.loading")}</p>
+          </div>
+        )}
 
         <div className="space-y-6">
           {imageChunks.map((row, rowIndex) => (
@@ -87,9 +119,9 @@ export default function GalleryImages() {
           ))}
         </div>
 
-        {images.length === 0 && (
+        {!loading && images.length === 0 && (
           <p className="text-gray-500 mt-8 text-center">
-            {t("gallery.noImages")}
+            {t("gallery.noImages")} {selectedRestaurant.name}
           </p>
         )}
       </div>

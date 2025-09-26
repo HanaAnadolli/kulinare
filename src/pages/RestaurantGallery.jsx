@@ -4,26 +4,28 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-// Demo data — replace with your real covers
+// Restaurant data matching the actual folders
 const restaurants = [
-  { id: "matisse", name: "Matisse", cover: "/src/assets/images/gallery1.png" },
+  { id: "al-trade", name: "Al Trade", cover: "/src/assets/images/gallery1.png" },
   {
-    id: "osteria",
-    name: "Osteria Basilico",
-    cover: "/src/assets/images/gallery4.png",
+    id: "faiku-palace",
+    name: "Faiku Palace - Viti",
+    cover: "/src/assets/images/gallery2.png",
   },
   {
     id: "gizzi",
-    name: "Gizzi Restaurant",
-    cover: "/src/assets/images/gallery7.png",
+    name: "Gizzi",
+    cover: "/src/assets/images/gallery3.png",
   },
-  { id: "sachpizza", name: "Sach Pizza", cover: "/src/assets/images/gallery2.png" },
-  { id: "terrazzan", name: "La Terrazzan", cover: "/src/assets/images/gallery3.png" },
+  { id: "la-terraca", name: "La Terraca - Hani Elezit", cover: "/src/assets/images/gallery4.png" },
+  { id: "missini-sweets", name: "Missini Sweets", cover: "/src/assets/images/gallery5.png" },
   {
-    id: "faikupalace",
-    name: "Faiku Palace",
-    cover: "/src/assets/images/gallery5.png",
+    id: "osteria-basilico",
+    name: "Osteria Basilico",
+    cover: "/src/assets/images/gallery6.png",
   },
+  { id: "sach-pizza", name: "Sach Pizza", cover: "/src/assets/images/gallery7.png" },
+  { id: "sol-venus", name: "SOL by Venus Hotel", cover: "/src/assets/images/gallery8.png" },
 ];
 
 export default function RestaurantGallery() {

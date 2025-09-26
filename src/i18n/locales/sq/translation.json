@@ -85,7 +85,9 @@
     "prevAria": "Paraprak",
     "nextAria": "Tjetër",
     "dynamicTitle": "GALERIA",
-    "noImages": "Nuk ka imazhe për të shfaqur."
+    "noImages": "Nuk ka imazhe për të shfaqur.",
+    "clickToView": "Kliko për të parë imazhet",
+    "loading": "Duke ngarkuar imazhet..."
   },
   "hero": {
     "heading": "Gjithçka që i duhet kuzhinës suaj – nga A në ZH.",

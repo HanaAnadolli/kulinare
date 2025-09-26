@@ -1,40 +1,80 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-// ---- demo images (replace / extend as needed) ----
-import g1 from "../assets/images/gallery1.png";
-import g2 from "../assets/images/gallery2.png";
-import g3 from "../assets/images/gallery3.png";
-import g4 from "../assets/images/gallery4.png";
-import g5 from "../assets/images/gallery5.png";
-import g6 from "../assets/images/gallery6.png";
-import g7 from "../assets/images/gallery7.png";
-import g8 from "../assets/images/gallery8.png";
-
 // ✅ make sure this stays defined above the component
 const GALLERIES = {
-  matisse: {
-    title: "Matisse – Pastiçeri",
-    images: [g1, g2, g3, g4, g5, g6, g7, g8, g2, g4, g6, g8],
+  "al-trade": {
+    title: "Al Trade",
+    folder: "Al Trade foto",
   },
-  osteria: {
+  "faiku-palace": {
+    title: "Faiku Palace - Viti",
+    folder: "Faiku Palace -Viti",
+  },
+  "gizzi": {
+    title: "Gizzi",
+    folder: "Gizzi",
+  },
+  "la-terraca": {
+    title: "La Terraca - Hani Elezit",
+    folder: "La Terraca - Hani Elezit",
+  },
+  "missini-sweets": {
+    title: "Missini Sweets",
+    folder: "Missini Sweets",
+  },
+  "osteria-basilico": {
     title: "Osteria Basilico",
-    images: [g4, g5, g6, g7, g8, g1, g2, g3, g5, g7, g1, g3],
+    folder: "Osteria Basilico",
   },
-  gizzi: {
-    title: "Gizzi Restaurant",
-    images: [g7, g8, g1, g2, g3, g4, g5, g6, g1, g3, g5, g7],
+  "sach-pizza": {
+    title: "Sach Pizza",
+    folder: "Sach Pizza",
+  },
+  "sol-venus": {
+    title: "SOL by Venus Hotel",
+    folder: "SOL by Vneus Hotel",
   },
 };
 
 export default function Gallery() {
   const { id } = useParams();
-  const gallery = GALLERIES[id] || { title: "Gallery", images: [] };
+  const gallery = GALLERIES[id] || { title: "Gallery", folder: "" };
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const [idx, setIdx] = useState(0);
+
+  // Load images for the selected restaurant
+  useEffect(() => {
+    if (gallery.folder) {
+      setLoading(true);
+      loadRestaurantImages(gallery.folder);
+    }
+  }, [gallery.folder]);
+
+  const loadRestaurantImages = async (folderName) => {
+    try {
+      // Import all images from all restaurant folders at build time
+      const allImageImports = import.meta.glob('/src/assets/*/*.{png,jpg,jpeg,JPG}', { eager: true });
+      
+      // Filter images for the specific restaurant folder
+      const restaurantImages = Object.entries(allImageImports)
+        .filter(([path]) => path.includes(folderName))
+        .map(([path, module]) => module.default);
+
+      console.log(`Loaded ${restaurantImages.length} images for ${folderName}`);
+      setImages(restaurantImages);
+    } catch (error) {
+      console.error('Error loading images:', error);
+      setImages([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const open = (i) => {
     setIdx(i);
@@ -42,9 +82,9 @@ export default function Gallery() {
   };
   const close = () => setIsOpen(false);
   const prev = () =>
-    setIdx((p) => (p === 0 ? gallery.images.length - 1 : p - 1));
+    setIdx((p) => (p === 0 ? images.length - 1 : p - 1));
   const next = () =>
-    setIdx((p) => (p === gallery.images.length - 1 ? 0 : p + 1));
+    setIdx((p) => (p === images.length - 1 ? 0 : p + 1));
 
   return (
     <>
@@ -70,9 +110,17 @@ export default function Gallery() {
             <div className="border-b border-gray-300 mt-2 mb-6" />
 
             {/* grid */}
-            {gallery.images.length ? (
+            {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {gallery.images.map((src, i) => (
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="animate-pulse">
+                    <div className="w-full h-56 bg-gray-300 rounded"></div>
+                  </div>
+                ))}
+              </div>
+            ) : images.length ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {images.map((src, i) => (
                   <button
                     key={`${src}-${i}`}
                     onClick={() => open(i)}
@@ -81,15 +129,17 @@ export default function Gallery() {
                   >
                     <img
                       src={src}
-                      alt={`Image ${i + 1}`}
+                      alt={`${gallery.title} ${i + 1}`}
                       className="w-full h-56 object-cover md:grayscale md:group-hover:grayscale-0 transition duration-300 ease-in-out"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </button>
                 ))}
               </div>
             ) : (
-              <p className="text-gray-600">
-                No images available for this restaurant.
+              <p className="text-gray-600 text-center py-8">
+                No images available for {gallery.title}.
               </p>
             )}
           </div>
@@ -110,7 +160,7 @@ export default function Gallery() {
             &times;
           </button>
 
-          {gallery.images.length > 1 && (
+          {images.length > 1 && (
             <button
               onClick={prev}
               className="absolute left-4 text-white text-4xl font-bold hover:text-gray-300"
@@ -121,12 +171,12 @@ export default function Gallery() {
           )}
 
           <img
-            src={gallery.images[idx]}
+            src={images[idx]}
             alt={`Full ${idx + 1}`}
             className="max-w-[90vw] max-h-[85vh] object-contain"
           />
 
-          {gallery.images.length > 1 && (
+          {images.length > 1 && (
             <button
               onClick={next}
               className="absolute right-4 text-white text-4xl font-bold hover:text-gray-300"

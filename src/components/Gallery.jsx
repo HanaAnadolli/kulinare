@@ -1,33 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import Img1 from "../assets/images/gallery1.png";
-import Img2 from "../assets/images/gallery2.png";
-import Img3 from "../assets/images/gallery3.png";
-import Img4 from "../assets/images/gallery4.png";
-import Img5 from "../assets/images/gallery5.png";
-import Img6 from "../assets/images/gallery6.png";
-import Img7 from "../assets/images/gallery7.png";
-import Img8 from "../assets/images/gallery8.png";
+
+// Utility: chunk array into rows of 4
+function chunkArray(array, size) {
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
 
 export default function Gallery() {
   const { t } = useTranslation();
-  const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8];
+  
+  // Restaurant data with their folder names and display names
+  const restaurants = [
+    { id: 1, name: "Al Trade", folder: "Al Trade foto" },
+    { id: 2, name: "Faiku Palace - Viti", folder: "Faiku Palace -Viti" },
+    { id: 3, name: "Gizzi", folder: "Gizzi" },
+    { id: 4, name: "La Terraca - Hani Elezit", folder: "La Terraca - Hani Elezit" },
+    { id: 5, name: "Missini Sweets", folder: "Missini Sweets" },
+    { id: 6, name: "Osteria Basilico", folder: "Osteria Basilico" },
+    { id: 7, name: "Sach Pizza", folder: "Sach Pizza" },
+    { id: 8, name: "SOL by Venus Hotel", folder: "SOL by Vneus Hotel" }
+  ];
 
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+  const [restaurantImages, setRestaurantImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const openLightbox = (index) => {
-    setCurrentIndex(index);
-    setLightboxOpen(true);
+  const handleRestaurantClick = (restaurant) => {
+    setSelectedRestaurant(restaurant);
+    loadRestaurantImages(restaurant.folder);
   };
 
-  const closeLightbox = () => setLightboxOpen(false);
-  const showPrev = () => {
-    setCurrentIndex((idx) => (idx === 0 ? images.length - 1 : idx - 1));
+  const loadRestaurantImages = async (folderName) => {
+    setLoading(true);
+    try {
+      // Import all images from all restaurant folders at build time
+      const allImageImports = import.meta.glob('/src/assets/*/*.{png,jpg,jpeg,JPG}', { eager: true });
+      
+      // Filter images for the specific restaurant folder
+      const restaurantImages = Object.entries(allImageImports)
+        .filter(([path]) => path.includes(folderName))
+        .map(([path, module], index) => ({
+          id: index + 1,
+          image_url: module.default,
+          filename: path.split('/').pop()
+        }));
+
+      console.log(`Loaded ${restaurantImages.length} images for ${folderName}`);
+      setRestaurantImages(restaurantImages);
+    } catch (error) {
+      console.error('Error loading images:', error);
+      setRestaurantImages([]);
+    } finally {
+      setLoading(false);
+    }
   };
-  const showNext = () => {
-    setCurrentIndex((idx) => (idx === images.length - 1 ? 0 : idx + 1));
+
+  const openModal = (index) => {
+    setActiveIndex(index);
+    setIsOpen(true);
   };
+
+  const closeModal = () => setIsOpen(false);
+  const showPrev = () =>
+    setActiveIndex((prev) => (prev === 0 ? restaurantImages.length - 1 : prev - 1));
+  const showNext = () =>
+    setActiveIndex((prev) => (prev === restaurantImages.length - 1 ? 0 : prev + 1));
 
   return (
     <section className="bg-[#D2AF6E] py-12 px-6">
@@ -40,53 +83,123 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Restaurant Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {images.map((src, idx) => (
+          {restaurants.map((restaurant) => (
             <div
-              key={idx}
-              className="relative overflow-hidden cursor-pointer group"
-              onClick={() => openLightbox(idx)}
+              key={restaurant.id}
+              className="relative overflow-hidden cursor-pointer group bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
+              onClick={() => handleRestaurantClick(restaurant)}
             >
-              <img
-                src={src}
-                alt={`Gallery ${idx + 1}`}
-                className="w-full h-48 object-cover filter grayscale group-hover:grayscale-0 transition duration-300 ease-in-out"
-              />
+              <div className="p-6 text-center">
+                <h3 className="text-lg font-semibold text-[#D2AF6E] group-hover:text-[#B8941F] transition duration-300">
+                  {restaurant.name}
+                </h3>
+                <p className="text-sm text-gray-600 mt-2">
+                  {t("gallery.clickToView")}
+                </p>
+              </div>
             </div>
           ))}
         </div>
+
+        {/* Restaurant Images Section */}
+        {selectedRestaurant && (
+          <div className="mt-12 bg-white rounded-lg p-6">
+            <h3 className="text-2xl font-semibold text-[#D2AF6E] mb-4">
+              {selectedRestaurant.name}
+            </h3>
+            <div className="border-b border-gray-300 mb-6"></div>
+
+            {loading && (
+              <div className="space-y-6">
+                {[...Array(2)].map((_, rowIndex) => (
+                  <div key={rowIndex} className="flex gap-4 md:grid md:grid-cols-4 md:gap-6">
+                    {[...Array(4)].map((_, index) => (
+                      <div key={index} className="animate-pulse flex-shrink-0 w-[80%] sm:w-[48%] md:w-auto">
+                        <div className="w-full h-56 bg-gray-300 rounded"></div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {!loading && restaurantImages.length > 0 && (
+              <div className="space-y-6">
+                {chunkArray(restaurantImages, 4).map((row, rowIndex) => (
+                  <div
+                    key={rowIndex}
+                    className="flex gap-4 overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 md:gap-6 md:overflow-visible"
+                  >
+                    {row.map((img, index) => {
+                      const globalIndex = rowIndex * 4 + index;
+                      return (
+                        <div
+                          key={img.id}
+                          className="flex-shrink-0 snap-start w-[80%] sm:w-[48%] md:w-auto cursor-pointer"
+                          onClick={() => openModal(globalIndex)}
+                        >
+                          <img
+                            src={img.image_url}
+                            alt={`${selectedRestaurant.name} ${img.id}`}
+                            className="w-full h-56 object-cover transition duration-300 ease-in-out transform md:grayscale md:hover:grayscale-0 md:hover:scale-105"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {!loading && restaurantImages.length === 0 && (
+              <p className="text-gray-500 mt-8 text-center">
+                {t("gallery.noImages")} {selectedRestaurant.name}
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Lightbox */}
-      {lightboxOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+      {/* Modal */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
           <button
-            onClick={closeLightbox}
-            className="absolute top-6 right-6 text-white text-4xl focus:outline-none"
+            onClick={closeModal}
+            className="absolute top-5 right-5 text-white text-3xl font-bold"
             aria-label={t("gallery.closeAria")}
           >
             &times;
           </button>
-          <button
-            onClick={showPrev}
-            className="absolute left-6 text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full hover:bg-opacity-75 focus:outline-none"
-            aria-label={t("gallery.prevAria")}
-          >
-            &#8249;
-          </button>
+
+          {restaurantImages.length > 1 && (
+            <button
+              onClick={showPrev}
+              className="absolute left-4 text-white text-4xl font-bold hover:text-gray-300"
+              aria-label={t("gallery.prevAria")}
+            >
+              &#10094;
+            </button>
+          )}
+
           <img
-            src={images[currentIndex]}
-            alt={`Gallery ${currentIndex + 1}`}
-            className="max-h-[80vh] max-w-[80vw] object-contain"
+            src={restaurantImages[activeIndex]?.image_url}
+            alt="Full"
+            className="max-w-full max-h-full object-contain"
           />
-          <button
-            onClick={showNext}
-            className="absolute right-6 text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full hover:bg-opacity-75 focus:outline-none"
-            aria-label={t("gallery.nextAria")}
-          >
-            &#8250;
-          </button>
+
+          {restaurantImages.length > 1 && (
+            <button
+              onClick={showNext}
+              className="absolute right-4 text-white text-4xl font-bold hover:text-gray-300"
+              aria-label={t("gallery.nextAria")}
+            >
+              &#10095;
+            </button>
+          )}
         </div>
       )}
     </section>

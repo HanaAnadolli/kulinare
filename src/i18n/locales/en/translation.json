@@ -85,7 +85,9 @@
     "prevAria": "Previous",
     "nextAria": "Next",
     "dynamicTitle": "GALLERY",
-    "noImages": "No images available to display."
+    "noImages": "No images available to display.",
+    "clickToView": "Click to view images",
+    "loading": "Loading images..."
   },
   "hero": {
     "heading": "Everything your kitchen needs – from A to Z.",
