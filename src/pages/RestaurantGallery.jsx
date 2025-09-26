@@ -72,6 +72,9 @@ export default function RestaurantGallery() {
                       alt={r.name}
                       className="w-full h-[300px] object-cover transform scale-110 transition duration-500 ease-in-out hover:scale-100"
                       loading="lazy"
+                      width="400"
+                      height="300"
+                      style={{ aspectRatio: '4/3' }}
                     />
                   ) : (
                     <div className="w-full h-[300px] bg-gray-300 flex items-center justify-center">

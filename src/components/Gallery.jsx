@@ -145,6 +145,9 @@ export default function Gallery() {
                             className="w-full h-56 object-cover transition duration-300 ease-in-out transform md:grayscale md:hover:grayscale-0 md:hover:scale-105"
                             loading="lazy"
                             decoding="async"
+                            width="300"
+                            height="224"
+                            style={{ aspectRatio: '4/3' }}
                           />
                         </div>
                       );

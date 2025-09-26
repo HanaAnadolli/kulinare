@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -37,6 +37,108 @@ const GALLERIES = {
     title: "SOL by Venus Hotel",
     folder: "SOL by Vneus Hotel",
   },
+};
+
+// Virtual scrolling component
+const VirtualImageGrid = ({ images, onImageClick }) => {
+  const [visibleRange, setVisibleRange] = useState({ start: 0, end: 12 }); // Show first 12 images initially
+  const [loadedImages, setLoadedImages] = useState(new Set());
+  
+  const ITEMS_PER_ROW = 4;
+  const ITEM_HEIGHT = 224; // h-56 = 224px
+  const ROWS_TO_RENDER = 3; // Render 3 rows initially
+  
+  const totalRows = Math.ceil(images.length / ITEMS_PER_ROW);
+  const visibleRows = Math.min(ROWS_TO_RENDER, totalRows);
+  const visibleImages = images.slice(0, visibleRows * ITEMS_PER_ROW);
+  
+  const loadMoreImages = useCallback(() => {
+    setVisibleRange(prev => ({
+      start: 0,
+      end: Math.min(prev.end + 8, images.length) // Load 8 more images
+    }));
+  }, [images.length]);
+  
+  const handleImageLoad = useCallback((index) => {
+    setLoadedImages(prev => new Set([...prev, index]));
+  }, []);
+  
+  // Intersection observer for loading more images
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadMoreImages();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    
+    const sentinel = document.getElementById('load-more-sentinel');
+    if (sentinel) {
+      observer.observe(sentinel);
+    }
+    
+    return () => {
+      if (sentinel) {
+        observer.unobserve(sentinel);
+      }
+    };
+  }, [loadMoreImages]);
+  
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {visibleImages.map((src, i) => (
+          <button
+            key={`${src}-${i}`}
+            onClick={() => onImageClick(i)}
+            className="group block overflow-hidden"
+            aria-label={`Open image ${i + 1}`}
+          >
+            <div className="relative w-full h-56 bg-gray-200">
+              {loadedImages.has(i) ? (
+                <img
+                  src={src}
+                  alt={`Gallery ${i + 1}`}
+                  className="w-full h-56 object-cover md:grayscale md:group-hover:grayscale-0 transition duration-300 ease-in-out"
+                  width="300"
+                  height="224"
+                  style={{ aspectRatio: '4/3' }}
+                />
+              ) : (
+                <div className="w-full h-56 bg-gray-200 animate-pulse flex items-center justify-center">
+                  <span className="text-gray-400 text-sm">Loading...</span>
+                </div>
+              )}
+              <img
+                src={src}
+                alt={`Gallery ${i + 1}`}
+                className="w-full h-56 object-cover md:grayscale md:group-hover:grayscale-0 transition duration-300 ease-in-out opacity-0"
+                width="300"
+                height="224"
+                style={{ aspectRatio: '4/3' }}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => handleImageLoad(i)}
+              />
+            </div>
+          </button>
+        ))}
+      </div>
+      
+      {visibleImages.length < images.length && (
+        <div id="load-more-sentinel" className="h-4 w-full">
+          <div className="text-center py-4">
+            <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-[#D2AF6E]"></div>
+            <p className="text-gray-500 mt-2">Loading more images...</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default function Gallery() {
@@ -88,6 +190,10 @@ export default function Gallery() {
   return (
     <>
       <Header />
+      {/* Preload critical images */}
+      {images.length > 0 && (
+        <link rel="preload" as="image" href={images[0]} />
+      )}
 
       <main className="flex flex-col min-h-screen">
         <section className="flex-grow bg-gray-100 py-10">
@@ -111,31 +217,14 @@ export default function Gallery() {
             {/* grid */}
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[...Array(8)].map((_, i) => (
+                {[...Array(12)].map((_, i) => (
                   <div key={i} className="animate-pulse">
                     <div className="w-full h-56 bg-gray-300 rounded"></div>
                   </div>
                 ))}
               </div>
             ) : images.length ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {images.map((src, i) => (
-                  <button
-                    key={`${src}-${i}`}
-                    onClick={() => open(i)}
-                    className="group block overflow-hidden"
-                    aria-label={`Open image ${i + 1}`}
-                  >
-                    <img
-                      src={src}
-                      alt={`${gallery.title} ${i + 1}`}
-                      className="w-full h-56 object-cover md:grayscale md:group-hover:grayscale-0 transition duration-300 ease-in-out"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </button>
-                ))}
-              </div>
+              <VirtualImageGrid images={images} onImageClick={open} />
             ) : (
               <p className="text-gray-600 text-center py-8">
                 No images available for {gallery.title}.
