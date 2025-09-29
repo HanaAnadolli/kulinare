@@ -8,14 +8,18 @@ import data from "../data/data.json";
 export default function ProductModal({ onClose }) {
   const navigate = useNavigate();
   const { clearFilters } = useProductFilter();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [categories, setCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    setCategories(data.categories || []);
+    if (data && data.categories) {
+      setCategories(data.categories);
+    } else {
+      console.error("Data not loaded or categories missing");
+    }
   }, []);
 
   const getDisplayName = (name) =>
@@ -32,40 +36,49 @@ export default function ProductModal({ onClose }) {
 
     const results = [];
 
-    data.categories.forEach((cat) => {
-      const catName = normalize(getDisplayName(cat.name));
-      if (catName.includes(query)) {
-        results.push({
-          type: "category",
-          name: getDisplayName(cat.name),
-          id: cat.id,
-        });
-      }
-    });
+    // Search categories
+    if (data.categories) {
+      data.categories.forEach((cat) => {
+        const catName = normalize(getDisplayName(cat.name));
+        if (catName.includes(query)) {
+          results.push({
+            type: "category",
+            name: getDisplayName(cat.name),
+            id: cat.id,
+          });
+        }
+      });
+    }
 
-    data.subcategories.forEach((sub) => {
-      const subName = normalize(getDisplayName(sub.name));
-      if (subName.includes(query)) {
-        results.push({
-          type: "subcategory",
-          name: getDisplayName(sub.name),
-          id: sub.id,
-          categoryId: sub.category_id,
-        });
-      }
-    });
+    // Search subcategories
+    if (data.subcategories) {
+      data.subcategories.forEach((sub) => {
+        const subName = normalize(getDisplayName(sub.name));
+        if (subName.includes(query)) {
+          results.push({
+            type: "subcategory",
+            name: getDisplayName(sub.name),
+            id: sub.id,
+            categoryId: sub.category_id,
+          });
+        }
+      });
+    }
 
-    data.products.forEach((prod) => {
-      const prodName = normalize(getDisplayName(prod.name));
-      if (prodName.includes(query)) {
-        results.push({
-          type: "product",
-          name: getDisplayName(prod.name),
-          id: prod.id,
-          subcategoryId: prod.subcategory_id,
-        });
-      }
-    });
+    // Search products
+    if (data.products) {
+      data.products.forEach((prod) => {
+        const prodName = normalize(getDisplayName(prod.name));
+        if (prodName.includes(query)) {
+          results.push({
+            type: "product",
+            name: getDisplayName(prod.name),
+            id: prod.id,
+            subcategoryId: prod.subcategory_id,
+          });
+        }
+      });
+    }
 
     setSearchResults(results.slice(0, 10));
   };
@@ -106,13 +119,14 @@ export default function ProductModal({ onClose }) {
           />
           <input
             type="text"
-            placeholder="Kërko produktin"
+            placeholder={t("search_placeholder")}
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
               handleSearch(e.target.value);
             }}
             onKeyDown={handleKeyDown}
+            autoComplete="off"
             className="border-b border-gray-400 focus:outline-none focus:border-[#55384C] pl-6 py-2 w-full placeholder-gray-400 text-gray-700"
           />
 

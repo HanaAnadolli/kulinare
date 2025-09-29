@@ -16,7 +16,10 @@ export default function ProductGrid({ filters, searchTerm = "" }) {
     setLoading(false);
   }, []);
 
-  const normalize = (str) => str?.toLowerCase().trim();
+  const normalize = (str) => {
+    if (!str || typeof str !== 'string') return '';
+    return str.toLowerCase().trim();
+  };
 
   const getDisplayName = (name) =>
     typeof name === "object" ? name[i18n.language] ?? name.en : name;
@@ -25,16 +28,16 @@ export default function ProductGrid({ filters, searchTerm = "" }) {
     const sub = subcategories.find((s) => s.id === product.subcategory_id);
     if (!sub) return false;
 
-    const prodName = normalize(getDisplayName(product.name));
-    const subName = normalize(getDisplayName(sub.name));
+    const prodName = normalize(getDisplayName(product.name)) || "";
+    const subName = normalize(getDisplayName(sub.name)) || "";
     const cat = data.categories.find((c) => c.id === sub.category_id);
-    const catName = normalize(getDisplayName(cat?.name));
+    const catName = normalize(getDisplayName(cat?.name)) || "";
 
     if (searchTerm) {
       return (
-        prodName.includes(searchTerm) ||
-        subName.includes(searchTerm) ||
-        catName.includes(searchTerm)
+        (prodName && prodName.includes(searchTerm)) ||
+        (subName && subName.includes(searchTerm)) ||
+        (catName && catName.includes(searchTerm))
       );
     }
 
