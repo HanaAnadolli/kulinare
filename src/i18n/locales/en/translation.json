@@ -22,11 +22,11 @@
     "cookies": "Cookies",
     "copyright": "Copyright © 2025 Kulinare. All Rights Reserved"
   },
-  "about": {
+  "about2": {
     "title": "ABOUT US",
     "description1": "The success of a functional kitchen depends on the equipment used.",
-    "description2": "When you have the right tools, the cook feels safer and more relaxed while preparing the food.",
-    "note": "The right tools bring efficiency for the cook and satisfaction for the customer.",
+    "description2": "When you have the right tools, the chef feels more confident and more relaxed while preparing food.",
+    "note": "The right equipment brings efficiency for the chef and satisfaction for the customer.",
     "button": "More about us"
   },
   "aboutUs": {
@@ -87,7 +87,8 @@
     "dynamicTitle": "GALLERY",
     "noImages": "No images available to display.",
     "clickToView": "Click to view images",
-    "loading": "Loading images..."
+    "loading": "Loading images...",
+    "viewMore": "View more"
   },
   "hero": {
     "heading": "Everything your kitchen needs – from A to Z.",
@@ -238,24 +239,24 @@
     "values": {
       "customer_focus": {
         "title": "Customer dedication",
-        "body": "Every decision and action is guided by our customers’ needs and expectations."
+        "body": "Every decision and action of ours is guided by our customers' needs and expectations."
       },
       "high_quality": {
         "title": "High product quality",
-        "body": "We provide only equipment that meets the highest market standards."
+        "body": "We provide only equipment and solutions that meet the highest market standards."
       },
       "sustainable_supply": {
         "title": "Sustainable supply",
-        "body": "We ensure continuity and reliability, with products that support a long-term supply chain."
+        "body": "We ensure continuity, reliability, and products that contribute to a long-term supply chain."
       },
       "professional_service": {
         "title": "Professional service",
-        "body": "From consulting to installation and service, our team offers support with professionalism and integrity."
+        "body": "From consultation to installation and service, our team always offers support with professionalism and integrity."
       }
     },
-    "closing": "We’re not just a supplier — we’re a strategic partner for gastronomy professionals seeking personalized, efficient solutions. With our experience and deep industry know-how, we deliver consulting and end-to-end projects for your spaces."
+    "closing": "We're not just a supplier — we're a strategic partner for gastronomy professionals seeking personalized, efficient solutions. With our experience and deep industry know-how, we deliver consulting and end-to-end projects for your spaces."
   },
-    "history": {
+  "history": {
     "title": "Our History",
     "image_alt": "History photo"
   }

@@ -21,6 +21,7 @@ export default function VideoSection() {
         <p className="mt-4 max-w-2xl text-white text-2xl md:text-base">
           {t("video.description")}
         </p>
+        <br />
         {/* <a href="/products">
           <button className="mt-8 px-6 py-3 border-2 text-[#D2AF6E] rounded hover:bg-[#fff] hover:text-[#55384C] transition-colors duration-200">
             {t("video.button")}

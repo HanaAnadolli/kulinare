@@ -11,23 +11,23 @@ export default function AboutSection() {
         {/* TEXT COLUMN */}
         <div className="md:w-4/3 w-full md:pr-12 text-center md:text-left">
           <h2 className="text-[32px] font-bold text-[#D2AF6E]">
-            {t("about.title")}
+            {t("about2.title")}
           </h2>
 
           <p className="mt-6 text-base font-medium">
-            {t("about.description1")}
+            {t("about2.description1")}
             <br />
-            {t("about.description2")}
+            {t("about2.description2")}
           </p>
 
           <p className="mt-4 text-[#55384C] text-base font-medium">
-            {t("about.note")}
+            {t("about2.note")}
           </p>
 
           <div className="mt-6 flex justify-center md:justify-start">
             <a href="/about">
               <button className="px-5 py-2 border border-[#55384C] text-[#55384C] rounded hover:bg-[#55384C] hover:text-white transition-colors duration-200">
-              {t("about.button")}
+              {t("about2.button")}
             </button>
             </a>
             

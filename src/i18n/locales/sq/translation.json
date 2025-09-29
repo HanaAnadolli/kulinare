@@ -22,10 +22,10 @@
     "cookies": "Cookies",
     "copyright": "Copyright © 2025 Kulinare. Të gjitha të drejtat e rezervuara."
   },
-  "about": {
+  "about2": {
     "title": "RRETH NESH",
     "description1": "Suksesi i një kuzhine funksionale varet nga pajisjet që përdoren.",
-    "description2": "Kur ke pajisjet e duhura, kuzhinieri ndihet më sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit.",
+    "description2": "Kur ke pajisjet e duhura, kuzhinieri ndihet më sigurt dhe më i relaksuar gjatë përgatitjes së ushqimit",
     "note": "Pajisjet e duhura sjellin efikasitet për kuzhinierin dhe kënaqësi për klientin.",
     "button": "Më shumë rreth nesh"
   },
@@ -87,10 +87,11 @@
     "dynamicTitle": "GALERIA",
     "noImages": "Nuk ka imazhe për të shfaqur.",
     "clickToView": "Kliko për të parë imazhet",
-    "loading": "Duke ngarkuar imazhet..."
+    "loading": "Duke ngarkuar imazhet...",
+    "viewMore": "Shiko më shumë"
   },
   "hero": {
-    "heading": "Gjithçka që i duhet kuzhinës suaj – nga A në ZH.",
+    "heading": "Gjithçka që i duhet kuzhinës suaj nga A në ZH.",
     "subtext": "Pajisje të specializuara për gastronomi dhe hoteleri – nga markat më të njohura botërore, me shërbim të personalizuar dhe profesional.",
     "button": "Shiko galerinë tonë"
   },
@@ -229,34 +230,33 @@
     "text": "Bashkohu me një vend pune ku puna ka kuptim dhe njerëzit janë vlera më e madhe.",
     "cta": "Bohu pjesë e ekipit"
   },
-
   "about": {
     "section_label": "RRETH NESH",
     "title": "Kush jemi ne",
     "image_alt": "Kulinare",
-    "lead": "Kulinare është një kompani lidere në tregun kosovar që nga 2006, e specializuar në pajisje profesionale për kuzhina, restorante, hotele dhe çdo ambient të industrisë Ho.Re.Ca. Me përkushtim ndaj cilësisë, klientit dhe shërbimit, ofrojmë zgjidhje moderne dhe të besueshme për përgatitjen, servimin, ruajtjen dhe transportimin e ushqimit.",
+    "lead": "Kulinare është një kompani lidere në tregun kosovar që nga 2006, e specializuar në pajisje profesionale për kuzhina, restorante, hotele dhe çdo ambient të industrisë Ho.Re.Ca. Me një përkushtim të thellë ndaj cilësisë, klientit dhe shërbimit, ne ofrojmë zgjidhje moderne dhe të besueshme për përgatitjen, servimin, ruajtjen dhe transportimin e ushqimit.",
     "values_title": "Vlerat tona:",
     "values": {
       "customer_focus": {
         "title": "Përkushtim ndaj klientit",
-        "body": "Çdo vendim dhe veprim udhëhiqet nga nevojat dhe pritshmëritë e klientëve tanë."
+        "body": "Çdo vendim dhe veprim ynë udhëhiqet nga nevojat dhe pritshmëritë e klientëve tanë."
       },
       "high_quality": {
         "title": "Cilësi e lartë e produkteve",
-        "body": "Ofronim vetëm pajisje që plotësojnë standardet më të larta të tregut."
+        "body": "Ne ofrojmë vetëm pajisje dhe zgjidhje që plotësojnë standardet më të larta të tregut."
       },
       "sustainable_supply": {
         "title": "Furnizim i qëndrueshëm",
-        "body": "Sigurojmë vazhdimësi dhe besueshmëri, me produkte që kontribuojnë në zinxhir furnizimi afatgjatë."
+        "body": "Sigurojmë vazhdimësi, besueshmëri dhe produkte që kontribuojnë në një zinxhir furnizimi afatgjatë."
       },
       "professional_service": {
         "title": "Shërbim profesional",
-        "body": "Nga konsultimi deri te instalimi dhe servisi, ekipi ynë ofron mbështetje me profesionalizëm dhe korrektësi."
+        "body": "Nga konsultimi deri te instalimi dhe servisi, ekipi ynë ofron gjithmonë mbështetje me profesionalizëm dhe korrektësi."
       }
     },
-    "closing": "Ne nuk jemi vetëm furnitor – jemi partner strategjik për profesionistët e gastronomisë që kërkojnë zgjidhje të personalizuara dhe efikase. Falë përvojës dhe njohurive tona, ofrojmë konsulencë dhe projekte të plota për ambientet tuaja."
+    "closing": "Ne nuk jemi vetëm një furnitor - jemi partner strategjik për çdo profesionist të gastronomisë që kërkon zgjidhje të personalizuara dhe efikase. Falë përvojës sonë dhe njohurive në këtë industri, ne ofrojmë edhe konsulencë dhe projekte të plota për ambientet tuaja."
   },
-    "history": {
+  "history": {
     "title": "Historia Jonë",
     "image_alt": "Foto e historisë"
   }
