@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import ImgPajisje from "../assets/images/pajisje-kuzhine.png";
 import ImgVegla from "../assets/images/vegla-kuzhine.png";
 import ImgBareteBuffet from "../assets/images/barete-buffet.png";
-import ImgVeshje from "../assets/images/veshje-personeli.png";
+import ImgVeshje from "../assets/images/table-top.png";
 import ImgDeterxhentet from "../assets/images/deterxhentet.png";
 
 export default function ProductsSection() {
@@ -35,8 +35,8 @@ export default function ProductsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Item 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:grid-rows-2">
+          {/* Item 1 - Tall card on the left */}
           <ProductCard
             img={ImgPajisje}
             title={t("products.items.kitchen_equipment.title")}
@@ -71,6 +71,15 @@ export default function ProductsSection() {
             title={t("products.items.detergents.title")}
             desc={t("products.items.detergents.desc")}
           />
+        </div>
+
+        {/* Centered "Shiko më shumë" button */}
+        <div className="flex justify-center mt-8">
+          <a href="/products">
+            <button className="px-6 py-2 border-2 border-[#55384C] text-[#55384C] rounded hover:bg-[#55384C] hover:text-white transition-colors duration-200">
+              {t("products.view_more")}
+            </button>
+          </a>
         </div>
       </div>
     </section>

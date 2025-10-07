@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/LOGO.png";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import ProductModal from "./ProductModal";
 import { useTranslation } from "react-i18next";
-
-// Flags
-import USFlag from "../assets/flags/united-states.png";
-import ALFlag from "../assets/flags/albania.png";
 
 export default function Header() {
   // Products modal (kept as-is)
@@ -30,8 +26,7 @@ export default function Header() {
 
   const handleCloseMobile = () => setIsMobileMenuOpen(false);
 
-  const currentFlag = i18n.language === "sq" ? ALFlag : USFlag;
-  const currentAlt = i18n.language === "sq" ? "Shqip" : "English";
+  const currentLang = i18n.language === "sq" ? "Shqip" : "English";
 
   return (
     <header className="bg-[#55384C] sticky top-0 z-50">
@@ -70,43 +65,57 @@ export default function Header() {
 
         {/* Language + Contact (Desktop) */}
         <div className="hidden lg:flex items-center space-x-4 relative">
-          {/* Language custom dropdown with flags */}
+          {/* Language custom dropdown */}
           <div className="relative">
             <button
               onClick={() => setIsLangOpen((v) => !v)}
-              className="flex items-center gap-2 bg-[#55384C] text-white px-2 py-1 rounded focus:outline-none"
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/30 backdrop-blur-sm"
               aria-haspopup="listbox"
               aria-expanded={isLangOpen}
             >
-              <img src={currentFlag} alt={currentAlt} className="h-5 w-7" />
+              <span className="text-sm font-medium">{currentLang}</span>
+              <FiChevronDown
+                className={`text-sm transition-transform duration-300 ${
+                  isLangOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             {isLangOpen && (
               <div
-                className="absolute right-0 mt-2 w-36 bg-white shadow-lg rounded border overflow-hidden"
+                className="absolute right-0 mt-3 w-40 bg-white shadow-2xl rounded-xl border border-gray-100 overflow-hidden transform transition-all duration-200 animate-fadeIn"
                 role="listbox"
               >
                 <button
                   onClick={() => handleLanguageChange("en")}
-                  className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
-                    i18n.language === "en" ? "bg-gray-50" : ""
+                  className={`flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#D2AF6E]/10 hover:to-[#D2AF6E]/5 transition-all duration-200 ${
+                    i18n.language === "en"
+                      ? "bg-gradient-to-r from-[#D2AF6E]/20 to-[#D2AF6E]/10 font-semibold"
+                      : ""
                   }`}
                   role="option"
                   aria-selected={i18n.language === "en"}
                 >
-                  <img src={USFlag} alt="English" className="h-5 w-7 mr-2" />
                   <span className="text-sm">English</span>
+                  {i18n.language === "en" && (
+                    <span className="w-2 h-2 bg-[#D2AF6E] rounded-full"></span>
+                  )}
                 </button>
+                <div className="h-px bg-gray-100"></div>
                 <button
                   onClick={() => handleLanguageChange("sq")}
-                  className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
-                    i18n.language === "sq" ? "bg-gray-50" : ""
+                  className={`flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#D2AF6E]/10 hover:to-[#D2AF6E]/5 transition-all duration-200 ${
+                    i18n.language === "sq"
+                      ? "bg-gradient-to-r from-[#D2AF6E]/20 to-[#D2AF6E]/10 font-semibold"
+                      : ""
                   }`}
                   role="option"
                   aria-selected={i18n.language === "sq"}
                 >
-                  <img src={ALFlag} alt="Shqip" className="h-5 w-7 mr-2" />
                   <span className="text-sm">Shqip</span>
+                  {i18n.language === "sq" && (
+                    <span className="w-2 h-2 bg-[#D2AF6E] rounded-full"></span>
+                  )}
                 </button>
               </div>
             )}
@@ -174,46 +183,57 @@ export default function Header() {
               {t("nav.contact")}
             </Link>
 
-            {/* Mobile: Language custom dropdown with flags */}
+            {/* Mobile: Language custom dropdown */}
             <div className="relative mt-2">
               <button
                 onClick={() => setIsMobileLangOpen((v) => !v)}
-                className="flex items-center gap-2 border border-[#55384C] text-[#55384C] rounded px-3 py-2 w-max"
+                className="flex items-center gap-2 border-2 border-[#55384C] text-[#55384C] rounded-lg px-4 py-2.5 w-max hover:bg-[#55384C] hover:text-white transition-all duration-300"
                 aria-haspopup="listbox"
                 aria-expanded={isMobileLangOpen}
               >
-                <img src={currentFlag} alt={currentAlt} className="h-5 w-7" />
-                <span className="text-base">
-                  {i18n.language === "sq" ? "Shqip" : "English"}
-                </span>
+                <span className="text-base font-medium">{currentLang}</span>
+                <FiChevronDown
+                  className={`text-sm transition-transform duration-300 ${
+                    isMobileLangOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
               {isMobileLangOpen && (
                 <div
-                  className="absolute mt-2 bg-white shadow-lg rounded border overflow-hidden"
+                  className="absolute mt-3 w-40 bg-white shadow-2xl rounded-xl border border-gray-100 overflow-hidden transform transition-all duration-200"
                   role="listbox"
                 >
                   <button
                     onClick={() => handleLanguageChange("en")}
-                    className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
-                      i18n.language === "en" ? "bg-gray-50" : ""
+                    className={`flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#D2AF6E]/10 hover:to-[#D2AF6E]/5 transition-all duration-200 ${
+                      i18n.language === "en"
+                        ? "bg-gradient-to-r from-[#D2AF6E]/20 to-[#D2AF6E]/10 font-semibold"
+                        : ""
                     }`}
                     role="option"
                     aria-selected={i18n.language === "en"}
                   >
-                    <img src={USFlag} alt="English" className="h-5 w-7 mr-2" />
                     <span>English</span>
+                    {i18n.language === "en" && (
+                      <span className="w-2 h-2 bg-[#D2AF6E] rounded-full"></span>
+                    )}
                   </button>
+                  <div className="h-px bg-gray-100"></div>
                   <button
                     onClick={() => handleLanguageChange("sq")}
-                    className={`flex items-center w-full px-3 py-2 hover:bg-gray-100 ${
-                      i18n.language === "sq" ? "bg-gray-50" : ""
+                    className={`flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#D2AF6E]/10 hover:to-[#D2AF6E]/5 transition-all duration-200 ${
+                      i18n.language === "sq"
+                        ? "bg-gradient-to-r from-[#D2AF6E]/20 to-[#D2AF6E]/10 font-semibold"
+                        : ""
                     }`}
                     role="option"
                     aria-selected={i18n.language === "sq"}
                   >
-                    <img src={ALFlag} alt="Shqip" className="h-5 w-7 mr-2" />
                     <span>Shqip</span>
+                    {i18n.language === "sq" && (
+                      <span className="w-2 h-2 bg-[#D2AF6E] rounded-full"></span>
+                    )}
                   </button>
                 </div>
               )}
