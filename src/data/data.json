@@ -8,10 +8,10 @@
       }
     },
     {
-      "id": 3,
+      "id": 5,
       "name": {
-        "en": "Bar and Buffet",
-        "sq": "Bari dhe Buffet"
+        "en": "Kitchen equipment",
+        "sq": "Pajisje Kuzhine"
       }
     },
     {
@@ -22,10 +22,10 @@
       }
     },
     {
-      "id": 5,
+      "id": 3,
       "name": {
-        "en": "Kitchen equipment",
-        "sq": "Pajisje kuzhine"
+        "en": "Bar and Buffet",
+        "sq": "Bar dhe Buffet"
       }
     },
     {
