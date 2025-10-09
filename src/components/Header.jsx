@@ -61,6 +61,10 @@ export default function Header() {
             {t("nav.blog")}
             <div className="bg-[#D2AF6E] h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
           </Link>
+          <Link to="/qr-generator" className="text-white p-2 px-4 group text-lg">
+            QR Generator
+            <div className="bg-[#D2AF6E] h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
+          </Link>
         </nav>
 
         {/* Language + Contact (Desktop) */}
@@ -178,6 +182,9 @@ export default function Header() {
             </Link>
             <Link to="/blog" onClick={handleCloseMobile}>
               {t("nav.blog")}
+            </Link>
+            <Link to="/qr-generator" onClick={handleCloseMobile}>
+              QR Generator
             </Link>
             <Link to="/contact-us" onClick={handleCloseMobile}>
               {t("nav.contact")}

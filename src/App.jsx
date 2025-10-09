@@ -10,6 +10,8 @@ import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import ContactUs from "./pages/ContactUs";
+import ContactCard from "./pages/ContactCard";
+import QRGenerator from "./pages/QRGenerator";
 import { ProductFilterProvider } from "./context/ProductFilterContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import ScrollToTop from "./components/ScrollToTop";
@@ -30,6 +32,8 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/contact-card" element={<ContactCard />} />
+        <Route path="/qr-generator" element={<QRGenerator />} />
 
         {/* 404 Page with translation */}
         <Route
