@@ -18,9 +18,18 @@ export default function VideoSection() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 md:px-0">
         
 
-        <p className="mt-4 max-w-2xl text-white text-2xl md:text-base">
-          {t("video.description")}
-        </p>
+        <p 
+          className="mt-4 max-w-3xl"
+          style={{
+            color: '#FFF',
+            textAlign: 'center',
+            fontSize: '24px',
+            fontStyle: 'normal',
+            fontWeight: 300,
+            lineHeight: '130%'
+          }}
+          dangerouslySetInnerHTML={{ __html: t("video.description") }}
+        />
         <br />
         {/* <a href="/products">
           <button className="mt-8 px-6 py-3 border-2 text-[#D2AF6E] rounded hover:bg-[#fff] hover:text-[#55384C] transition-colors duration-200">

@@ -1,39 +1,41 @@
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import "../index.css";
+import Testimonial1 from "../assets/images/testimonial1.svg";
+import Testimonial2 from "../assets/images/testimonial2.svg";
+import Testimonial3 from "../assets/images/testimonial3.svg";
 
 const testimonials = [
   {
-    img: "https://i.pravatar.cc/100?img=1",
-    name: "Dawid Malan",
-    role: "Lead of Comfest Hotel",
+    img: Testimonial1,
+    name: "Tsiamis Vasilieos",
+    role: "Sach Pizza and Sach Caffe",
     rating: 5,
-    text: `I was amazed by the creativity in their custom designs.
-           The installation was smooth, and the remodeling breathed new life into my living area.`,
+    text: `Partnerë të shkëlqyer për një kohë të gjatë!`,
   },
   {
-    img: "https://i.pravatar.cc/100?img=2",
-    name: "Sofia Margins",
-    role: "Lead of Digital Restaurant",
+    img: Testimonial2,
+    name: "",
+    role: "Gizzi Group",
     rating: 5,
-    text: `Every detail felt thoughtfully crafted. The transformation of my living space was remarkable.`,
+    text: `Kulinare na ka ndihmuar të rritemi dhe të zhvillohemi`,
   },
   {
-    img: "https://i.pravatar.cc/100?img=3",
+    img: Testimonial3,
     name: "Ale Haanes",
     role: "Lead of Pristina Hotel",
     rating: 5,
     text: `They turned my vision into reality with precision and style.`,
   },
   {
-    img: "https://i.pravatar.cc/100?img=4",
-    name: "Mark Davor",
-    role: "Director of Grand Restaurant",
+    img: Testimonial1,
+    name: "Osteria Basilico",
+    role: "",
     rating: 5,
-    text: `From the planning stage to the final touches, every step was handled professionally.`,
+    text: `Kulinare ka qenë një partner i shkëlqyer në rrugëtimin tonë`,
   },
   {
-    img: "https://i.pravatar.cc/100?img=5",
+    img: Testimonial2,
     name: "Elena Petrova",
     role: "Owner of City Café",
     rating: 5,
@@ -61,7 +63,7 @@ export default function TestimonialSlider() {
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-[#D2AF6E]">
+            <h2 className="text-2xl font-bold text-[#D2AF6E] uppercase">
               {t("testimonials.title")}
             </h2>
             <p className="mt-1 text-gray-800">{t("testimonials.subtitle")}</p>

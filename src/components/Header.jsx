@@ -33,7 +33,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={Logo} alt="Kulinare logo" className="h-8 w-auto" />
+          <img src={Logo} alt="Kulinare logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

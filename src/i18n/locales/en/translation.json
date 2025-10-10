@@ -140,7 +140,8 @@
   },
   "products": {
     "title": "OUR PRODUCTS",
-    "view_more": "Browse our catalog",
+    "browse_our_catalog": "Browse our catalog",
+    "view_more": "See more",
     "description": {
       "part1": "Our products include professional equipment, tools, utensils, and innovative accessories for kitchens, bars, and restaurants.",
       "highlight": "Every product is selected to guarantee functionality, quality, and durability.",
@@ -183,7 +184,7 @@
     "submit": "Submit"
   },
   "testimonials": {
-    "title": "OUR TESTIMONIALS",
+    "title": "Our References",
     "subtitle": "What people say about us"
   },
   "values": {

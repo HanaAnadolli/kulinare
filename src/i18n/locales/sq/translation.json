@@ -140,7 +140,8 @@
   },
   "products": {
     "title": "PRODUKTET TONA",
-    "view_more": "Shfleto katallogun tonë",
+    "browse_our_catalog": "Shfleto katallogun tonë",
+    "view_more": "Shiko me shumë",
     "description": {
       "part1": "Produktet tona përfshijnë pajisje profesionale, vegla pune, enë dhe aksesorë inovativë për kuzhina, bare dhe restorante.",
       "highlight": "Çdo produkt është zgjedhur për të garantuar funksionalitet, cilësi dhe qëndrueshmëri.",
@@ -183,7 +184,7 @@
     "submit": "Dërgo"
   },
   "testimonials": {
-    "title": "DËSHMITË TONA",
+    "title": "Referencat tona",
     "subtitle": "Çfarë thonë njerëzit për ne"
   },
   "values": {
@@ -213,7 +214,7 @@
   },
   "video": {
     "title": "Gordon Ramsay",
-    "description": "“Shefat e mëdhenj kanë nevojë për pajisje të mëdha. Pa mjetet e duhura, qëndrueshmëria dhe cilësia janë të pamundura.”",
+    "description": "Shefat e mëdhenj kanë nevojë për pajisje të mëdha. Pa mjetet <br /> e duhura, qëndrueshmëria dhe cilësia janë të pamundura.",
     "button": "Shiko katalogun tonë"
   },
   "notFound": "404 – Faqja nuk u gjet",

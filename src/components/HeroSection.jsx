@@ -23,7 +23,7 @@ export default function HeroSection() {
         />
 
         <a href="/gallery">
-          <button className="mt-6 px-6 py-3 border border-[#D2AF6E] text-[#D2AF6E] text-base sm:text-lg font-medium rounded hover:bg-white hover:text-[#55384C] transition-colors duration-200">
+          <button className="mt-6 px-6 py-3 border border-[#D2AF6E] text-[#D2AF6E] text-base sm:text-lg font-medium hover:bg-white hover:text-[#55384C] transition-colors duration-200 hover:border-[#fff]">
           {t("hero.button")}
         </button>
         </a>

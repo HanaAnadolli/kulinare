@@ -28,8 +28,8 @@ export default function ProductsSection() {
           </div>
           <div className="mt-6 md:mt-0">
             <a href="/products">
-              <button className="px-5 py-2 border-2 border-[#55384C] text-[#55384C] rounded hover:bg-[#55384C] hover:text-white transition-colors duration-200">
-                {t("products.view_more")}
+              <button className="px-5 py-2 border-2 border-[#55384C] text-[#55384C] hover:bg-[#55384C] hover:text-white transition-colors duration-200">
+                {t("products.browse_our_catalog")}
               </button>
             </a>
           </div>
@@ -76,7 +76,7 @@ export default function ProductsSection() {
         {/* Centered "Shiko më shumë" button */}
         <div className="flex justify-center mt-8">
           <a href="/products">
-            <button className="px-6 py-2 border-2 border-[#55384C] text-[#55384C] rounded hover:bg-[#55384C] hover:text-white transition-colors duration-200">
+            <button className="px-6 py-2 border-2 border-[#55384C] text-[#55384C] hover:bg-[#55384C] hover:text-white transition-colors duration-200">
               {t("products.view_more")}
             </button>
           </a>
