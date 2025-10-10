@@ -17,9 +17,10 @@ export default function HeroSection() {
           {t("hero.heading")}
         </h1>
 
-        <p className="mt-4 text-white text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed">
-          {t("hero.subtext")}
-        </p>
+        <p 
+          className="mt-4 text-white text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: t("hero.subtext") }}
+        />
 
         <a href="/gallery">
           <button className="mt-6 px-6 py-3 border border-[#D2AF6E] text-[#D2AF6E] text-base sm:text-lg font-medium rounded hover:bg-white hover:text-[#55384C] transition-colors duration-200">

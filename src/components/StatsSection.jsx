@@ -8,9 +8,9 @@ export default function StatsSection() {
   const { t } = useTranslation();
 
   const stats = [
-    { icon: KitchenToolsIcon, number: "6000", label: t("stats.items.products") },
-    { icon: KitchenBarIcon,   number: "200",  label: t("stats.items.projects") },
-    { icon: CustomerIcon,     number: "4600", label: t("stats.items.happy_clients") },
+    { icon: KitchenToolsIcon, number: "6000+", label: t("stats.items.products") },
+    { icon: KitchenBarIcon,   number: "200+",  label: t("stats.items.projects") },
+    { icon: CustomerIcon,     number: "4600+", label: t("stats.items.happy_clients") },
   ];
 
   return (
