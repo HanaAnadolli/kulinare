@@ -42,42 +42,34 @@ export default function BlogSection() {
           BLOG
         </h2>
 
-        <div className="space-y-0">
+        <div className="space-y-6">
           {blogPosts.map((post, idx) => (
-            <div key={idx} className="flex items-center space-x-8 py-6 border-b border-[#D2AF6E] last:border-b-0">
+            <div
+              key={idx}
+              className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 py-6 border-b border-[#D2AF6E] last:border-b-0"
+            >
               {/* Date Section */}
-              <div className="flex-shrink-0 w-20">
-                <p
-                  className="text-sm text-gray-700 mb-1"
-                  style={{ fontWeight: 'normal' }}
-                >
+              <div className="flex-shrink-0 flex sm:block items-center sm:items-start gap-2 sm:gap-0 sm:w-20">
+                <p className="text-sm text-gray-700" style={{ fontWeight: 'normal' }}>
                   {post.date.month}
                 </p>
-                <p
-                  className="text-2xl font-bold text-gray-700"
-                >
+                <p className="text-2xl font-bold text-gray-700">
                   {post.date.day}
                 </p>
               </div>
 
               {/* Image Section */}
-              <div className="flex-shrink-0 w-24 h-24">
+              <div className="flex-shrink-0 w-full sm:w-24 h-44 sm:h-24 rounded overflow-hidden">
                 <img
                   src={post.img}
                   alt={post.title}
-                  className="w-full h-full object-cover rounded"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Title Section */}
-              <div className="flex-1">
-                <h3
-                  className="text-gray-700 font-bold leading-tight"
-                  style={{
-                    fontSize: '16px',
-                    lineHeight: '130%'
-                  }}
-                >
+              <div className="flex-1 text-left">
+                <h3 className="text-gray-700 font-bold leading-tight text-lg sm:text-base">
                   {post.title}
                 </h3>
               </div>
@@ -86,7 +78,7 @@ export default function BlogSection() {
               <div className="flex-shrink-0">
                 <a
                   href={post.link}
-                  className="group inline-block text-[#D2AF6E] text-sm font-medium"
+                  className="group inline-flex items-center text-[#D2AF6E] text-sm font-medium"
                 >
                   {t("blog.readMore")}
                   <div className="h-[2px] w-0 group-hover:w-full bg-[#D2AF6E] transition-all duration-500"></div>
