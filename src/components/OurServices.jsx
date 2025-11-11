@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import BlueprintIcon from "../assets/icons/blueprint.svg";
 import CookingIcon from "../assets/icons/cooking.svg";
 import ApplianceIcon from "../assets/icons/appliances.svg";
-import CustomerIcon from "../assets/icons/cutlery.svg";
+import CustomerIcon from "../assets/icons/costumer2.svg";
 
 export default function OurServices() {
   const { t } = useTranslation();

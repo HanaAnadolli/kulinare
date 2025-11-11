@@ -61,7 +61,7 @@ export default function ContactForm() {
       {/* Left Column */}
       <div>
         <h2 className="text-lg font-semibold text-black mb-2">
-          {t("contact.title")}
+          {t("contact.title2")}
         </h2>
         <p className="text-sm text-gray-700 mb-4">{t("contact.intro1")}</p>
         <p className="text-sm text-gray-700 mb-6">{t("contact.intro2")}</p>

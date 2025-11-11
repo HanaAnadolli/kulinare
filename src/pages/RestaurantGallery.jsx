@@ -56,6 +56,7 @@ export default function RestaurantGallery() {
           <h1 className="text-2xl md:text-3xl font-semibold text-[#D2AF6E] mb-8">
             GALERIA
           </h1>
+          <div className="border-b h-[2px] border-[#55384C] mb-8"></div>
 
           {/* Grid of restaurant cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

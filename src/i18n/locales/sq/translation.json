@@ -62,7 +62,8 @@
     "paragraph": "Punonjësit tanë, profesionistë të përkushtuar, ju udhëheqin nga këshilli deri te instalimi i kuzhinës suaj. Me vite përvoje të fituara në këtë industri, kemi ndërtuar themelat dhe sekretet e suksesit tonë."
   },
   "contact": {
-    "title": "Ne jemi këtu për ju!",
+    "title": "NA KONTAKTONI",
+    "title2": "Ne jemi këtu për ju!",
     "intro1": "Keni pyetje, nevojë për këshilla apo dëshironi të bashkëpunoni me ne?",
     "intro2": "Stafi i Kulinare është gjithmonë i gatshëm t’ju ndihmojë. Na kontaktoni për informacione rreth produkteve, shërbimeve, apo për të kërkuar një ofertë të personalizuar për biznesin tuaj.",
     "addressLabel": "Adresa",
@@ -100,7 +101,7 @@
   },
   "mission": {
     "title": "Misioni Jonë",
-    "description": "Të ofrojmë zgjidhje që pasurojnë përvojën e ushqimit dhe pijeve në çdo ambient profesional."
+    "description": "Misioni ynë është të fuqizojmë çdo profesionist të gastronomisë me pajisje të cilësisë së lartë dhe shërbim të besueshëm, duke ndërtuar standarde të qëndrueshme për kuzhina profesionale."
   },
   "vision": {
     "title": "Vizoni Jonë",
@@ -214,7 +215,7 @@
   },
   "video": {
     "title": "Gordon Ramsay",
-    "description": "Shefat e mëdhenj kanë nevojë për pajisje të mëdha. Pa mjetet <br /> e duhura, qëndrueshmëria dhe cilësia janë të pamundura.",
+    "description": "“Shefat e mëdhenj kanë nevojë për pajisje të mëdha. Pa mjetet <br /> e duhura, qëndrueshmëria dhe cilësia janë të pamundura.”",
     "button": "Shiko katalogun tonë"
   },
   "notFound": "404 – Faqja nuk u gjet",

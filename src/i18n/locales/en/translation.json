@@ -57,7 +57,8 @@
     "march": "March"
   },
   "contact": {
-    "title": "We're here for you!",
+    "title": "CONTACT US",
+    "title2": "We're here for you!",
     "intro1": "Got questions, need advice, or want to collaborate with us?",
     "intro2": "The Kulinare staff is always ready to help you. Contact us for product info, services, or to request a personalized offer.",
     "addressLabel": "Address",
@@ -100,7 +101,7 @@
   },
   "mission": {
     "title": "Our Mission",
-    "description": "To provide advanced and professional solutions for the gastronomy industry in Kosovo, committed to product quality, customer service, and helping build functional, efficient, and sustainable kitchens for every client."
+    "description": "Our mission is to empower every gastronomy professional with high-quality equipment and reliable service, building sustainable standards for professional kitchens."
   },
   "vision": {
     "title": "Our Vision",

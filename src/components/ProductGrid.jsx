@@ -80,6 +80,16 @@ export default function ProductGrid({ filters, searchTerm = "" }) {
           const sub = subMap[subId];
           const subName = getDisplayName(sub?.name);
           const productWithFile = groupedBySub[subId].find((p) => p.file);
+          let fileUrl = null;
+          if (productWithFile?.file) {
+            if (/^https?:\/\//i.test(productWithFile.file)) {
+              fileUrl = productWithFile.file;
+            } else {
+              const normalizedPath = productWithFile.file.replace(/^\/+/, "");
+              fileUrl = `/${encodeURI(normalizedPath)}`;
+            }
+          }
+          const hasPdf = Boolean(fileUrl);
 
           return (
             <div
@@ -97,12 +107,12 @@ export default function ProductGrid({ filters, searchTerm = "" }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-800 flex flex-col justify-end">
                 <div>
                   <h3 className="text-lg font-semibold mb-1">{subName}</h3>
-                  {productWithFile && (
+                  {hasPdf && (
                     <a
-                      href={productWithFile.file}
+                      href={fileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm"
+                      className="text-sm underline"
                     >
                       {t("product.download_pdf")}
                     </a>
