@@ -11,19 +11,22 @@ export default function BlogSection() {
     {
       date: { month: "Maj", day: "15" },
       img: blog1,
-      title: "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine",
+      title:
+        "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine",
       link: "/blog/1",
     },
     {
       date: { month: "March", day: "11" },
       img: blog2,
-      title: "Nga tehet te dërrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës",
+      title:
+        "Nga tehet te dërrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës",
       link: "/blog/2",
     },
     {
       date: { month: "March", day: "10" },
       img: blog3,
-      title: "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie",
+      title:
+        "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie",
       link: "/blog/3",
     },
   ];
@@ -34,9 +37,9 @@ export default function BlogSection() {
         <h2
           className="text-center mb-12"
           style={{
-            color: '#D2AF6E',
-            fontSize: '24px',
-            fontWeight: 'normal',
+            color: "#D2AF6E",
+            fontSize: "24px",
+            fontWeight: "normal",
           }}
         >
           BLOG
@@ -50,7 +53,10 @@ export default function BlogSection() {
             >
               {/* Date Section */}
               <div className="flex-shrink-0 flex sm:block items-center sm:items-start gap-2 sm:gap-0 sm:w-20">
-                <p className="text-sm text-gray-700" style={{ fontWeight: 'normal' }}>
+                <p
+                  className="text-sm text-gray-700"
+                  style={{ fontWeight: "normal" }}
+                >
                   {post.date.month}
                 </p>
                 <p className="text-2xl font-bold text-gray-700">
@@ -78,10 +84,10 @@ export default function BlogSection() {
               <div className="flex-shrink-0">
                 <a
                   href={post.link}
-                  className="group inline-flex items-center text-[#D2AF6E] text-sm font-medium"
+                  className="group relative inline-block text-[#D2AF6E] text-sm font-medium"
                 >
                   {t("blog.readMore")}
-                  <div className="h-[2px] w-0 group-hover:w-full bg-[#D2AF6E] transition-all duration-500"></div>
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#D2AF6E] transition-all duration-500 group-hover:w-full"></span>
                 </a>
               </div>
             </div>
