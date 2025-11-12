@@ -22,7 +22,7 @@ function chunkArray(array, size) {
 
 export default function Gallery() {
   const { t } = useTranslation();
-  
+
   // Define gallery images
   const galleryImages = [
     { id: 1, image_url: gallery1, filename: "gallery1.png" },
@@ -32,7 +32,7 @@ export default function Gallery() {
     { id: 5, image_url: gallery5, filename: "gallery5.png" },
     { id: 6, image_url: gallery6, filename: "gallery6.png" },
     { id: 7, image_url: gallery7, filename: "gallery7.png" },
-    { id: 8, image_url: gallery8, filename: "gallery8.png" }
+    { id: 8, image_url: gallery8, filename: "gallery8.png" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -45,9 +45,13 @@ export default function Gallery() {
 
   const closeModal = () => setIsOpen(false);
   const showPrev = () =>
-    setActiveIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+    setActiveIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    );
   const showNext = () =>
-    setActiveIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    );
 
   return (
     <section className="bg-[#D2AF6E] py-12 px-6">
@@ -55,10 +59,10 @@ export default function Gallery() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-8">
           <div className="mb-6 lg:mb-0">
-            <h2 className="text-4xl font-bold text-white mb-4">{t("gallery.title")}</h2>
-            <p className="text-white text-lg">
-              {t("gallery.subtitle")}
-            </p>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {t("gallery.title")}
+            </h2>
+            <p className="text-white text-lg">{t("gallery.subtitle")}</p>
           </div>
           <button className="bg-transparent border border-[#55384C] text-[#55384C] px-6 py-3 font-medium hover:bg-[#55384C] hover:text-white transition duration-300">
             {t("gallery.viewMore")}
@@ -70,17 +74,15 @@ export default function Gallery() {
           {galleryImages.map((img, index) => (
             <div
               key={img.id}
-              className="cursor-pointer"
+              className="cursor-pointer overflow-hidden"
               onClick={() => openModal(index)}
             >
               <img
                 src={img.image_url}
                 alt={`Gallery image ${img.id}`}
-                className="w-full h-48 md:h-56 object-cover transition duration-300 ease-in-out hover:opacity-90"
+                className="w-full object-contain transition duration-500 ease-in-out filter grayscale hover:grayscale-0"
                 loading="lazy"
                 decoding="async"
-                width="300"
-                height="224"
               />
             </div>
           ))}
