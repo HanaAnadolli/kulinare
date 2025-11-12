@@ -46,23 +46,25 @@ export default function ProductsSection() {
 
           {/* Item 2 */}
           <ProductCard
+            img={ImgVeshje}
+            title={t("products.items.staff_clothing.title")}
+            desc={t("products.items.staff_clothing.desc")}
+          />
+
+          {/* Item 3 */}
+
+          <ProductCard
             img={ImgVegla}
             title={t("products.items.kitchen_tools.title")}
             desc={t("products.items.kitchen_tools.desc")}
           />
 
-          {/* Item 3 */}
+          {/* Item 4 */}
+
           <ProductCard
             img={ImgBareteBuffet}
             title={t("products.items.bars_buffets.title")}
             desc={t("products.items.bars_buffets.desc")}
-          />
-
-          {/* Item 4 */}
-          <ProductCard
-            img={ImgVeshje}
-            title={t("products.items.staff_clothing.title")}
-            desc={t("products.items.staff_clothing.desc")}
           />
 
           {/* Item 5 */}
