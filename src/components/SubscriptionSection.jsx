@@ -1,8 +1,11 @@
 // src/components/SubscriptionSection.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Logo from "../assets/logo-dark.svg"; // Adjust path if needed
 
 export default function SubscriptionSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-white py-12">
       <div className="max-w-2xl mx-auto px-6 flex flex-col items-center">
@@ -15,14 +18,14 @@ export default function SubscriptionSection() {
 
         {/* Heading */}
         <h2 className="text-lg md:text-xl font-semibold text-black mb-6 text-center">
-          Regjistrohu për ofertat, idetë dhe sugjerimet tona speciale
+          {t("subscription.title")}
         </h2>
 
         {/* Subscription Form */}
         <form className="w-full flex">
           <input
             type="email"
-            placeholder="Shkruani emailin tuaj"
+            placeholder={t("subscription.placeholder")}
             className="
               flex-1
               border
@@ -53,7 +56,7 @@ export default function SubscriptionSection() {
               duration-200
             "
           >
-            Dërgo
+            {t("subscription.submit")}
           </button>
         </form>
       </div>
