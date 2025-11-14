@@ -187,7 +187,24 @@
   },
   "testimonials": {
     "title": "Our References",
-    "subtitle": "What people say about us"
+    "subtitle": "What people say about us",
+    "items": [
+      {
+        "text": "Excellent partners for a long time!"
+      },
+      {
+        "text": "Kulinare has helped us grow and develop"
+      },
+      {
+        "text": "They turned my vision into reality with precision and style."
+      },
+      {
+        "text": "Kulinare has been an excellent partner on our journey"
+      },
+      {
+        "text": "They delivered a custom solution that perfectly fits our café."
+      }
+    ]
   },
   "values": {
     "title": "Our Values",

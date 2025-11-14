@@ -5,47 +5,47 @@ import Testimonial1 from "../assets/images/testimonial1.svg";
 import Testimonial2 from "../assets/images/testimonial2.svg";
 import Testimonial3 from "../assets/images/testimonial3.svg";
 
-const testimonials = [
-  {
-    img: Testimonial1,
-    name: "Tsiamis Vasilieos",
-    role: "Sach Pizza and Sach Caffe",
-    rating: 5,
-    text: `Partnerë të shkëlqyer për një kohë të gjatë!`,
-  },
-  {
-    img: Testimonial2,
-    name: "",
-    role: "Gizzi Group",
-    rating: 5,
-    text: `Kulinare na ka ndihmuar të rritemi dhe të zhvillohemi`,
-  },
-  {
-    img: Testimonial3,
-    name: "Ale Haanes",
-    role: "Lead of Pristina Hotel",
-    rating: 5,
-    text: `They turned my vision into reality with precision and style.`,
-  },
-  {
-    img: Testimonial1,
-    name: "Osteria Basilico",
-    role: "",
-    rating: 5,
-    text: `Kulinare ka qenë një partner i shkëlqyer në rrugëtimin tonë`,
-  },
-  {
-    img: Testimonial2,
-    name: "Elena Petrova",
-    role: "Owner of City Café",
-    rating: 5,
-    text: `They delivered a custom solution that perfectly fits our café.`,
-  },
-];
-
 export default function TestimonialSlider() {
   const sliderRef = useRef(null);
   const { t } = useTranslation();
+
+  const testimonials = [
+    {
+      img: Testimonial1,
+      name: "Tsiamis Vasilieos",
+      role: "Sach Pizza and Sach Caffe",
+      rating: 5,
+      textKey: "testimonials.items.0.text",
+    },
+    {
+      img: Testimonial2,
+      name: "",
+      role: "Gizzi Group",
+      rating: 5,
+      textKey: "testimonials.items.1.text",
+    },
+    {
+      img: Testimonial3,
+      name: "Ale Haanes",
+      role: "Lead of Pristina Hotel",
+      rating: 5,
+      textKey: "testimonials.items.2.text",
+    },
+    {
+      img: Testimonial1,
+      name: "Osteria Basilico",
+      role: "",
+      rating: 5,
+      textKey: "testimonials.items.3.text",
+    },
+    {
+      img: Testimonial2,
+      name: "Elena Petrova",
+      role: "Owner of City Café",
+      rating: 5,
+      textKey: "testimonials.items.4.text",
+    },
+  ];
 
   const scrollLeft = () => {
     if (!sliderRef.current) return;
@@ -117,7 +117,7 @@ export default function TestimonialSlider() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 text-sm text-center">{item.text}</p>
+                <p className="text-gray-700 text-sm text-center">{t(item.textKey)}</p>
               </div>
             </div>
           ))}

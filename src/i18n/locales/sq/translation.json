@@ -187,7 +187,24 @@
   },
   "testimonials": {
     "title": "Referencat tona",
-    "subtitle": "Çfarë thonë njerëzit për ne"
+    "subtitle": "Çfarë thonë njerëzit për ne",
+    "items": [
+      {
+        "text": "Partnerë të shkëlqyer për një kohë të gjatë!"
+      },
+      {
+        "text": "Kulinare na ka ndihmuar të rritemi dhe të zhvillohemi"
+      },
+      {
+        "text": "Ata e kthyen vizionin tim në realitet me precizion dhe stil."
+      },
+      {
+        "text": "Kulinare ka qenë një partner i shkëlqyer në rrugëtimin tonë"
+      },
+      {
+        "text": "Ata dhanë një zgjidhje të personalizuar që përshtatet përfektësisht me kafenenë tonë."
+      }
+    ]
   },
   "values": {
     "title": "Vlerat Tona",
