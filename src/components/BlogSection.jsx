@@ -9,24 +9,21 @@ export default function BlogSection() {
 
   const blogPosts = [
     {
-      date: { month: "Maj", day: "15" },
+      date: { month: t("months.may"), day: "15" },
       img: blog1,
-      title:
-        "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine",
+      title: t("blog.posts.0.title"),
       link: "/blog/1",
     },
     {
-      date: { month: "March", day: "11" },
+      date: { month: t("months.march"), day: "11" },
       img: blog2,
-      title:
-        "Nga tehet te dërrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës",
+      title: t("blog.posts.1.title"),
       link: "/blog/2",
     },
     {
-      date: { month: "March", day: "10" },
+      date: { month: t("months.march"), day: "10" },
       img: blog3,
-      title:
-        "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie",
+      title: t("blog.posts.2.title"),
       link: "/blog/3",
     },
   ];
@@ -42,7 +39,7 @@ export default function BlogSection() {
             fontWeight: "normal",
           }}
         >
-          BLOG
+          {t("blogTitle")}
         </h2>
 
         <div className="space-y-6">

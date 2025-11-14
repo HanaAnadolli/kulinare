@@ -41,20 +41,21 @@
   "blog": {
     "title": "LAJMET TONA MË TË FUNDIT",
     "readMore": "Lexo më shumë",
-    "posts": [
-      {
+    "posts": {
+      "0": {
         "title": "Precizion dhe Performancë: Mjetet thelbësore që i nevojitet çdo shefi kuzhine"
       },
-      {
+      "1": {
         "title": "Nga tefet te djerrasat: Udhëzuesi juaj për pajisjet profesionale të shefit të kuzhinës"
       },
-      {
+      "2": {
         "title": "Pajisja e Mjeshtrave: Mjete të domosdoshme për përsosmëri kulinarie"
       }
-    ]
+    }
   },
   "months": {
-    "march": "Mars"
+    "march": "Mars",
+    "may": "Maj"
   },
   "details": {
     "overlayText": "Ku çdo detaj ka rëndësi në krijimin tonë.",

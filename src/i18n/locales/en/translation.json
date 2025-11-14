@@ -41,20 +41,21 @@
   "blog": {
     "title": "OUR LATEST NEWS",
     "readMore": "Read more",
-    "posts": [
-      {
+    "posts": {
+      "0": {
         "title": "Precision and Performance: Essential tools every chef needs"
       },
-      {
+      "1": {
         "title": "From ladles to skillets: Your guide to pro chef equipment"
       },
-      {
-        "title": "Master’s Gear: Must-have tools for culinary excellence"
+      "2": {
+        "title": "Master's Gear: Must-have tools for culinary excellence"
       }
-    ]
+    }
   },
   "months": {
-    "march": "March"
+    "march": "March",
+    "may": "May"
   },
   "contact": {
     "title": "CONTACT US",
