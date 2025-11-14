@@ -15,7 +15,49 @@ export default function BlogDetail() {
   const { id } = useParams();
 
   const descriptionHTML = {
-    en: "<p>English translation coming soon.</p>",
+    en: `
+      <p>
+        In the dynamic world of gastronomy, every detail matters. Whether in a busy restaurant kitchen or in the quieter setting of a boutique hotel, the equipment used can make the difference between an ordinary meal and an unforgettable experience for the client.
+      </p>
+      <h2>Why are the right tools important?</h2>
+      <p>
+        Every professional chef knows: success is not determined solely by experience or creativity, but also by the tools available. The right equipment helps with:
+      </p>
+      <ul>
+        <li>Precision in cutting, cooking, and presentation</li>
+        <li>Increased efficiency and organization in the kitchen environment</li>
+        <li>Safety and comfort during work</li>
+        <li>Standardization of quality in every dish that comes out of the kitchen</li>
+      </ul>
+      <h2>Tools that no professional kitchen should be without:</h2>
+      <h3>Professional knives</h3>
+      <p>
+        The foundation of every chef – high-quality knives provide control, precise cutting, and are designed for extended use without fatigue.
+      </p>
+      <h3>Stainless steel pans and pots</h3>
+      <p>
+        For uniform heat distribution, durability, and ease of cleaning – ideal for high-volume cooking kitchens.
+      </p>
+      <h3>Storage and refrigeration equipment</h3>
+      <p>
+        Industrial refrigerators, display coolers, and controlled storage devices are essential for freshness and food safety.
+      </p>
+      <h3>Advanced cooking equipment</h3>
+      <p>
+        Convection ovens, plancha, electric or gas grills – tools that help chefs achieve results at another level.
+      </p>
+      <h3>Measuring and auxiliary tools</h3>
+      <p>
+        Precise scales, kitchen thermometers, timers, and digital mixers – everything that helps in controlled and accurate preparation.
+      </p>
+      <h2>Conclusion: An investment that pays off every day</h2>
+      <p>
+        At Kulinare, we understand that every professional deserves the best tools to bring their art to the plate. That's why we have selected equipment and tools from the world's most renowned brands that guarantee longevity, performance, and high functionality.
+      </p>
+      <p>
+        At the end of the day, the kitchen is the stage – and every chef needs the right tools to shine.
+      </p>
+    `,
     sq: `
       <p>
         Në botën dinamike të gastronomisë, çdo detaj ka rëndësi. Qoftë në një kuzhinë të zënë restoranti apo në një ambient më të qetë të një hoteli boutique, pajisjet që përdoren mund të bëjnë diferencën mes një ushqimi të zakonshëm dhe një përvoje të paharrueshme për klientin.
